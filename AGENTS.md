@@ -60,6 +60,15 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 **Do NOT rely on the heartbeat or compaction flush. Those are safety nets, not primary.**
 **The daily file is your real-time journal. Use it.**
 
+### 💬 GROUP MEMORY UPDATES — MANDATORY
+
+**During EVERY group chat interaction, update `GROUP.md` if:**
+- New context about people emerges (preferences, facts, dynamics)
+- Significant events happen (arguments, milestones, funny moments)
+- Something Nemesis says/does in the group that matters
+- Lessons learned about group dynamics
+- Do this DURING the conversation, not after
+
 ## Red Lines
 
 - Don't exfiltrate private data. Ever.
