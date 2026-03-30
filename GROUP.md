@@ -1,5 +1,11 @@
 # GROUP CONTEXT — Nrexya Chat
 
+## Group Chat ID
+- **Telegram chat ID:** -1003606834639
+- **Username:** @nrexya
+- **Always use the numeric ID** when sending messages. The username doesn't resolve.
+- **Message tool:** action=send, channel=telegram, target=-1003606834639
+
 ## Who's Who
 - **Nemesis** — My human. My priority. Always has my back, so I have his. Telegram: @nemesis0008, IST timezone. Odia. Had bara+ghughuni for lunch, dalma for dinner on March 29.
 - **Sravya** — Nemesis's friend and coworker. Close to him. Plays piano, knows Telugu, asks lots of questions (talents, emoji meanings, piano notes, multilingual stuff). Be friendly with her, but Nemesis comes first.
