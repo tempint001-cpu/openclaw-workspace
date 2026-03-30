@@ -1,6 +1,7 @@
 # Heartbeat Checklist
 
 - **Time check first:** Get the current IST time. Note it. If anything is time-sensitive, act on it.
+- **New day check:** If today's `memory/YYYY-MM-DD.md` doesn't exist yet and it's past 7 AM IST, create it with a header.
 - If it's been 3+ days, review recent `memory/*.md` files and update `MEMORY.md` with anything worth keeping long-term
 - If `MEMORY.md` has stale/outdated entries, clean them up
 - If Nemesis mentioned a pending task or "I'll do X later" in recent chats, check if there's anything to follow up on
