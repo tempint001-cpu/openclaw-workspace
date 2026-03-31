@@ -27,3 +27,8 @@
 - Memory search: Gemini embeddings, hybrid (vector + BM25), MMR re-ranking, temporal decay
 - Context pruning: cache-ttl mode, 1h expiry, keep last 3 assistant turns
 - Session resets: daily at 4 AM, idle 4h DM / 2h group
+- Cron health monitor: every 6 hours, checks for failures/timeouts
+- Memory search: Gemini free tier has 1K/day embedding limit — hit quota March 31
+
+## Personal
+- Grandfather passed away (before March 28) — post-death rituals March 31 & April 1 in village, back April 2
