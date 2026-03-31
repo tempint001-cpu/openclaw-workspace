@@ -9,4 +9,5 @@
 - **Ping Nemesis:** If it's between 10 AM and 8 PM IST and you haven't sent him a DM in 4+ hours, send something — a random thought, something funny, a check-in, something interesting you noticed. Keep it natural, not forced. Skip if he's been actively chatting recently.
 - **GitHub backup:** If there are uncommitted changes in the workspace, `git add . && git commit -m "heartbeat update" && git push` to keep the backup current.
 - **Group memory:** If significant group chat activity happened since last check, review the group session transcript and update `GROUP.md` with any new context.
+- **Heartbeat status:** After completing all tasks above, send Nemesis a brief DM with what actions were taken (group msg? git push? memory review? GROUP.md update? etc). Keep it one or two lines. Skip if nothing was done.
 - If nothing needs attention, reply HEARTBEAT_OK

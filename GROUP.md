@@ -37,6 +37,16 @@
 
 ## History & Context
 
+### March 31, 2026 (Tuesday — village day for Nemesis)
+
+**Morning (~11 AM IST)**
+- Sravya was in the group, asked about morning routine
+- Group Nexa sent WOTD with audio pronunciation
+- Casual banter about coffee vs tea vs water
+- Sravya said she drinks water in the morning — group Nexa said "raw-dogging the morning" 😂
+- Sravya said "choosday" (Tuesday) — group Nexa replied "and I choose you 🫵😏"
+- Good vibe, natural conversation
+
 ### March 29, 2026 (First Day in Group)
 
 **The Birthday Debate (~4-6 AM IST)**
