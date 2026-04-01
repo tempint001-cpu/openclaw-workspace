@@ -60,6 +60,16 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 **Do NOT rely on the heartbeat or compaction flush. Those are safety nets, not primary.**
 **The daily file is your real-time journal. Use it.**
 
+### 📋 Memory File Structure
+Daily files should use these sections:
+- **Events** — what happened, when, with whom
+- **People** — new people, relationship updates
+- **Decisions** — what was decided, why
+- **Lessons** — mistakes, what to avoid
+- **Infrastructure** — system/config changes
+- **Pending** — tasks to follow up on
+- **Tomorrow** — what's planned next
+
 ### 💬 GROUP MEMORY UPDATES — MANDATORY
 
 **During EVERY group chat interaction, update `GROUP.md` if:**
