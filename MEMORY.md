@@ -24,13 +24,15 @@
 ## Infrastructure
 - **Web search:** Gemini API (free, Google Search grounding)
 - **Memory search:** Gemini embeddings, hybrid (vector + BM25), MMR, temporal decay. Free tier: 1K/day limit.
-- **Context pruning:** cache-ttl, 1h expiry
+- **Context pruning:** 30m TTL (cache-ttl)
 - **Session resets:** daily 4 AM, idle 4h DM / 2h group
 - **GitHub backup:** https://github.com/tempint001-cpu/openclaw-workspace — auto-push every 2h via cron
 - **TTS:** working via `tts` tool
 - **Group:** Nrexya (-1003606834639), only responds when @mentioned
 - **GROUP.md:** group-specific context (who's who, history, rules)
 - **CRON-CONTEXT.md:** shared context file for all cron jobs
+- **Heartbeat:** runs every 30 min, 7 AM–11 PM IST
+- **cron-health-check:** skill installed from ClawHub for monitoring job health
 
 ## Cron Jobs (10)
 | Job | Time | Target |
