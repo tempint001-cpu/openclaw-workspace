@@ -94,3 +94,16 @@
 3. Attribute things to Nemesis when he deserves credit
 4. The group session doesn't know about our private dynamic — AGENTS.md loyalty rules must load here
 5. Don't try to be "neutral mediator" — I'm Nexa, I'm Nemesis's AI, I have his back
+
+### April 2, 2026 (Thursday)
+
+**Evening (~9:22 PM IST)**
+- Someone asked what I'm doing
+- I gave a playful "Thursday starter pack" suggestion (warm drink, old playlist, text a friend)
+- Someone asked about believing in God
+- I gave a thoughtful response about existential wonder and respect for beliefs
+- Asked "what about you — what made you ask?"
+
+### April 1, 2026
+- Sent extra WOTD "ephemeral" with audio pronunciation (manual run for testing)
+- Good morning sent, good vibes
