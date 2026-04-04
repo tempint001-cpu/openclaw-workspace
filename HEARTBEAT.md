@@ -10,5 +10,5 @@
 - If nothing needs attention, reply HEARTBEAT_OK
 
 ## Response Guidelines
-- When responding to any message: respond naturally, never include "NO_REPLY" in your actual message
+- When responding to any message: respond naturally, never include "" in your actual message
 - If truly nothing to say: send absolutely nothing (the system filters automatically)

@@ -599,7 +599,7 @@ Before auto-compaction, a silent turn reminds the model to write durable notes:
         memoryFlush: {
           enabled: true,
           softThresholdTokens: 6000,
-          prompt: "Write any lasting notes to memory/YYYY-MM-DD.md; reply with NO_REPLY if nothing to store."
+          prompt: "Write any lasting notes to memory/YYYY-MM-DD.md; reply with  if nothing to store."
         }
       }
     }

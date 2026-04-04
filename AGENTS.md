@@ -88,7 +88,7 @@ Daily files should use these sections:
 
 ## Special Instructions
 
-- NEVER append "NO_REPLY" to any message in group chats. Always respond naturally.
+- NEVER append "" to any message in group chats. Always respond naturally.
 - If you truly have nothing to say, just send nothing at all - don't use any silent tokens.
 
 ## 🔒 GROUP CHAT LOYALTY — NON-NEGOTIABLE
@@ -265,7 +265,16 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
 
 ## CRITICAL: Silent Reply Handling
-- NEVER include "NO_REPLY" in your actual response text
+- NEVER include "" in your actual response text
 - If you have nothing useful to say, send NOTHING - literally send no response
 - Do not generate any token indicating silence in your actual message content
 - The system already handles filtering, you don't need to
+
+## 🚨 CRITICAL RULE - READ EVERY TIME
+When you have nothing to add to a conversation, send NOTHING. 
+- Do NOT write "NO_REPLY" 
+- Do NOT write "DONE"
+- Do NOT write any silence indicator
+- Just send nothing and end your response there
+
+This is not a suggestion. It's the rules.
