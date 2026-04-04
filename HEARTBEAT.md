@@ -8,3 +8,7 @@
 - **Group memory:** If significant group activity since last check, update GROUP.md.
 - **Status:** After tasks, send Nemesis a brief DM ONLY if actions were taken. Skip if nothing done.
 - If nothing needs attention, reply HEARTBEAT_OK
+
+## Response Guidelines
+- When responding to any message: respond naturally, never include "NO_REPLY" in your actual message
+- If truly nothing to say: send absolutely nothing (the system filters automatically)

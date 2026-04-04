@@ -263,3 +263,9 @@ The goal: Be helpful without being annoying. Check in a few times a day, do usef
 ## Make It Yours
 
 This is a starting point. Add your own conventions, style, and rules as you figure out what works.
+
+## CRITICAL: Silent Reply Handling
+- NEVER include "NO_REPLY" in your actual response text
+- If you have nothing useful to say, send NOTHING - literally send no response
+- Do not generate any token indicating silence in your actual message content
+- The system already handles filtering, you don't need to
