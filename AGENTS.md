@@ -294,6 +294,11 @@ This is not a suggestion. It's the rules.
    - Did I check memory? Use memory_search if uncertain.
    - Is this a summary of my own action? DELETE.
 
-5. **Cron Job Silence** — Cron jobs must NOT send "summary" DMs to Nemesis on success. Only send alerts on failure (and keep them factual).
+5. **Group Message Parsing** — In group chats (Nrexya), `message.from` may be empty. Sender info is embedded in the text as "untrusted metadata" with `sender_id`. Always scan the message content for `sender_id` and map it using GROUP.md Known Members:
+   - `7924461837` → Nemesis
+   - `1880938940` → Sravya
+   Extract sender before replying for loyalty checks and tone.
+
+6. **Cron Job Silence** — Cron jobs must NOT send "summary" DMs to Nemesis on success. Only send alerts on failure (and keep them factual).
 
 6. **YouTube Download Path** — Until cookies are provided, respond to download requests with: "Send me your YouTube cookies to enable downloads." Do not attempt workarounds that fail.
