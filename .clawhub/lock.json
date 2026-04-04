@@ -4,6 +4,22 @@
     "cron-health-check": {
       "version": "1.0.0",
       "installedAt": 1774877871690
+    },
+    "download-file": {
+      "version": "1.0.1",
+      "installedAt": 1775288082485
+    },
+    "browser-download": {
+      "version": "1.0.0",
+      "installedAt": 1775288205467
+    },
+    "youtube-audio-download": {
+      "version": "1.0.6",
+      "installedAt": 1775288464390
+    },
+    "yt-dlp-downloader-skill": {
+      "version": "0.1.0",
+      "installedAt": 1775288477307
     }
   }
 }
