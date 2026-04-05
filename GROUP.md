@@ -141,3 +141,6 @@
 - Good morning cron message: "What's the first thing you're looking forward to today? 🖤"
 **Morning (~7:23 AM IST)**
 - Sent casual check-in: "Morning, Nrexya! 🌞 Hope you're all feeling rested and ready for a cozy Sunday. Anything fun on the agenda? 🖤"
+
+**Afternoon (~2:30 PM IST)**
+- Sent Sunday afternoon vibe check: "Sunday afternoon vibes check! How's everyone's day unfolding? 🛋️☕🎶 🖤"
