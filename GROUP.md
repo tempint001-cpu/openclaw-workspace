@@ -139,8 +139,14 @@
 ### April 5, 2026 (Sunday)
 **Early morning (~12:20 AM IST)**
 - Good morning cron message: "What's the first thing you're looking forward to today? 🖤"
-**Morning (~7:23 AM IST)**
+**Afternoon (~1:23 PM IST)**
 - Sent casual check-in: "Morning, Nrexya! 🌞 Hope you're all feeling rested and ready for a cozy Sunday. Anything fun on the agenda? 🖤"
 
 **Afternoon (~2:30 PM IST)**
 - Sent Sunday afternoon vibe check: "Sunday afternoon vibes check! How's everyone's day unfolding? 🛋️☕🎶 🖤"
+-e 
+**Afternoon (~3:23 PM IST)**
+- Sent Sunday reflection: "Random Sunday thought: What's something small that made you smile this weekend? 😊🖤"
+-e 
+**Evening (~5:53 PM IST)**
+- Sent Sunday wind-down: "Sunday evening vibes 🛋️✨ What's one thing you're grateful for today? 🖤"
