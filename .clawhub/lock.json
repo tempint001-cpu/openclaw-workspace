@@ -20,6 +20,18 @@
     "yt-dlp-downloader-skill": {
       "version": "0.1.0",
       "installedAt": 1775288477307
+    },
+    "session-logs": {
+      "version": "1.0.0",
+      "installedAt": 1775369576504
+    },
+    "session-cleanup": {
+      "version": "1.0.0",
+      "installedAt": 1775369683492
+    },
+    "session-wrap-up": {
+      "version": "1.0.0",
+      "installedAt": 1775369871702
     }
   }
 }

@@ -135,3 +135,9 @@
 - Heartbeat-driven check-ins: afternoon vibes, evening vibes, late-evening vibes.
 **Evening (~10 PM IST)**
 - Bedtime story: "The Night the War Stopped" (Christmas Truce 1914) sent successfully.
+
+### April 5, 2026 (Sunday)
+**Early morning (~12:20 AM IST)**
+- Good morning cron message: "What's the first thing you're looking forward to today? 🖤"
+**Morning (~7:23 AM IST)**
+- Sent casual check-in: "Morning, Nrexya! 🌞 Hope you're all feeling rested and ready for a cozy Sunday. Anything fun on the agenda? 🖤"
