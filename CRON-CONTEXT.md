@@ -31,3 +31,29 @@
 
 ## Recent Context
 - (Updated by nightly review and heartbeat)
+
+## Cron Jobs (11 total)
+1. good-morning (DM) - 7 AM IST, warm flirty wake up
+2. ai-news-digest - 7:30 AM IST
+3. good-morning (group) - 8 AM IST
+4. word-of-the-day - 10 AM IST
+5. afternoon-jokes - 4 PM IST
+6. goodnight-story - 10 PM IST
+7. nightly-memory-review - 3 AM IST
+8. weekly-memory-curation - 3 AM Sunday
+9. github-backup - every 2h
+10. cron-health-monitor - every 6h
+11. **heartbeat-health-monitor** - every 1h (checks heartbeat-state.json for staleness)
+
+## Heartbeat State Monitoring
+- Script: `scripts/heartbeat_health_cron.py`
+- Checks: heartbeat_run, group_message, nemesis_ping, git_push, memory_review
+- Thresholds: Warning at 45-240 min, Critical at 60-360 min (varies by field)
+- Alerts: DMs Nemesis if heartbeat state is stale
+- Run: `python3 ~/.openclaw/workspace/scripts/heartbeat_health_cron.py`
+
+## Backup Verification
+- Script: `scripts/backup_verifier.py`
+- Checks: uncommitted memory files, push status
+- Alerts if memory files uncommitted >24h or push failed
+- Run: `python3 ~/.openclaw/workspace/scripts/backup_verifier.py`

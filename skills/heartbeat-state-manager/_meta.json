@@ -1,0 +1,6 @@
+{
+  "name": "heartbeat-state-manager",
+  "version": "1.0.0",
+  "description": "Manages and persists heartbeat state to heartbeat-state.json",
+  "author": "Nexa"
+}
