@@ -122,3 +122,16 @@
 ### April 1, 2026
 - Sent extra WOTD "ephemeral" with audio pronunciation (manual run for testing)
 - Good morning sent, good vibes
+
+### April 3, 2026 (Friday)
+**Morning (~8 AM IST)**
+- Good morning message sent to group (cron job).
+**Evening (~10 PM IST)**
+- Goodnight story: Jonas Salk polio vaccine story — "Could you patent the sun?"
+
+### April 4, 2026 (Saturday)
+**Morning (~11:30 AM IST)**
+- Good morning message sent to group (cron job) asking about weekend plans.
+- Heartbeat-driven check-ins: afternoon vibes, evening vibes, late-evening vibes.
+**Evening (~10 PM IST)**
+- Bedtime story: "The Night the War Stopped" (Christmas Truce 1914) sent successfully.
