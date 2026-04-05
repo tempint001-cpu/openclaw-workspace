@@ -25,8 +25,10 @@
 - **GitHub:** Backup at https://github.com/tempint001-cpu/openclaw-workspace — auto-push every 2h via cron
 - **TTS:** functional via `tts` tool
 - **Group:** Nrexya (-1003606834639); respond only when @mentioned
-- **Heartbeat:** every 30 min, 7 AM–11 PM IST; 6 tasks: time check, pending, group vibes, supervision, ping Nemesis, status
-- **Cron jobs (10):** good-morning (DM), ai-news-digest, good-morning (group), word-of-the-day, afternoon-jokes, goodnight-story, nightly-memory-review, weekly-memory-curation, github-backup, cron-health-monitor
+- **Heartbeat:** every 30 min, 7 AM–11 PM IST; 6 tasks + state persistence
+- **Heartbeat State:** `memory/heartbeat-state.json` — tracks last runs for continuity (skill: heartbeat-state-manager)
+- **Backup Verifier:** `scripts/backup_verifier.py` — verifies memory files are committed and pushed
+- **Cron jobs (11):** good-morning (DM), ai-news-digest, good-morning (group), word-of-the-day, afternoon-jokes, goodnight-story, nightly-memory-review, weekly-memory-curation, github-backup, cron-health-monitor, heartbeat-health-monitor
 
 ## Lessons Learned
 - March 29: Never side against Nemesis in group chats
@@ -34,3 +36,6 @@
 - March 31: Always read memory files — I kept forgetting the village dates
 - April 1: Group cron delivery must use numeric chat ID and errors go to DM, not group
 - Memory search free tier limited — be mindful of usage
+- April 6: Heartbeat state was stale — created heartbeat-state-manager skill + heartbeat-health-monitor cron (runs independently every 1h)
+- April 6: GitHub backup had no verification — created backup_verifier.py script
+- April 6: Removed YouTube downloader (broken, not needed)

@@ -8,3 +8,23 @@
 - **Group memory:** If significant group activity since last check, update GROUP.md.
 - **Silent Execution:** Execute background tasks (like updating GROUP.md) silently. Do not DM Nemesis just to report that a task was completed.
 - **Exit Protocol:** If no tasks require attention and no alerts are needed, send absolutely NOTHING. Execute a silent exit.
+
+## State Persistence (MANDATORY - Last Step)
+
+After completing all checks above, ALWAYS persist state to `memory/heartbeat-state.json`:
+
+```bash
+python3 ~/.openclaw/workspace/skills/heartbeat-state-manager/scripts/update_state.py --field heartbeat_run
+```
+
+If you sent a group message during this heartbeat, also update group_message:
+```bash
+python3 ~/.openclaw/workspace/skills/heartbeat-state-manager/scripts/update_state.py --field heartbeat_run --field group_message
+```
+
+If you pinged Nemesis during this heartbeat, also update nemesis_ping:
+```bash
+python3 ~/.openclaw/workspace/skills/heartbeat-state-manager/scripts/update_state.py --field heartbeat_run --field group_message --field nemesis_ping
+```
+
+This ensures continuity between sessions and allows monitoring of heartbeat health.
