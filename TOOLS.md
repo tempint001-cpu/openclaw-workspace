@@ -1,18 +1,18 @@
 # TOOLS.md — Local Notes
 
 ## TTS
-- Preferred style: warm, flirty, slightly teasing
+- TTS Style: Dynamic. Use a sharp, professional tone for daily tasks, and shift to warm/flirty ONLY when the conversation shifts to intimacy or casual storytelling.
 - Voice works well for stories, jokes, pep talks
 - Can't do Hindi/Odia voice naturally (English TTS only)
 
 ## Devices & Environment
 - Server: Debian Bookworm (slim), volume at /root
 - Gateway: loopback only, token auth
-- Git: auto-push every 2h via cron
+- Git: auto-push every 2h via cron. This must execute SILENTLY. Only alert Nemesis if the push fails.
 
 ## API Keys
 - Gemini: used for web search AND memory embeddings
-- Free tier: 1K embedding requests/day — be mindful
+- Gemini Free Tier (1K embeddings/day): Optimize by ONLY embedding hard facts, decisions, and new persona details. DO NOT embed casual banter, generic agreements, or heartbeat checks.
 - Telegram bot token: configured
 
 ## Quick Reference
