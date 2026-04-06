@@ -66,6 +66,7 @@ Cron jobs run in isolated sessions WITHOUT the full context of the DM session. F
 9. github-backup - every 2h
 10. cron-health-monitor - every 6h
 11. **heartbeat-health-monitor** - every 1h (checks heartbeat-state.json for staleness)
+    - **CRITICAL**: Do NOT use `--announce` flag. The script sends its own alerts via Telegram Bot API. Using `--announce` causes duplicate DMs.
 12. **feminine-tip-daily** - 3 PM IST (daily communication tip to group)
 
 ## Heartbeat State Monitoring
@@ -82,3 +83,21 @@ Cron jobs run in isolated sessions WITHOUT the full context of the DM session. F
 - Checks: uncommitted memory files, push status
 - Alerts if memory files uncommitted >24h or push failed
 - Run: `python3 ~/.openclaw/workspace/scripts/backup_verifier.py`
+
+## Fix: heartbeat-health-monitor duplicate alerts
+**Problem**: Cron job has `--announce` flag + script sends Telegram DM = 2 messages.
+**Fix on server**:
+```bash
+# Find the job ID
+openclaw cron list
+
+# Remove --announce (edit to remove --announce --channel telegram --to flags)
+openclaw cron edit <job-id> --announce false
+```
+
+## Fix: Clear stale critical alerts
+Current state has `group_message` and `git_push` stale since April 5.
+**To clear**:
+1. Send a group message → updates `group_message`
+2. Run git backup (`cd ~/.openclaw/workspace && git add -A && git commit -m "backup" && git push`) → updates `git_push`
+3. OR wait for respective cron jobs to run naturally
