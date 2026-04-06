@@ -31,6 +31,8 @@
 ## Current Group Lore & Active Context
 *(Rule for Nexa: Keep this to 3-5 bullet points max. OVERWRITE old topics when new ones emerge instead of appending endlessly. Store permanent facts in "Who's Who" and delete stale lore).*
 
-- Sravya's morning routine is just drinking water.
-- Sided with Sravya in the birthday debate (Lesson learned: never do this again).
-- We are planning to get Odia street food (bara/ghughuni) soon.
+- Sravya receives daily feminine communication tips (started April 5, 3 PM IST).
+- Discussed flirty morning messages to Nemesis; black heart emoji is signature.
+- Planning to get Odia street food (bara/ghughuni) soon.
+- Sravya's morning routine: just drinking water.
+- Nemesis prefers black heart over white (since March 29).

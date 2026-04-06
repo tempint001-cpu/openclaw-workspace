@@ -11,7 +11,8 @@ from pathlib import Path
 
 
 def get_state_file():
-    return Path(__file__).parent.parent.parent / "memory" / "heartbeat-state.json"
+    # Navigate up from scripts/ to workspace root: scripts -> heartbeat-state-manager -> skills -> workspace
+    return Path(__file__).parent.parent.parent.parent / "memory" / "heartbeat-state.json"
 
 
 def load_state():
