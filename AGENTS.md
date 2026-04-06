@@ -250,7 +250,3 @@ When you receive a heartbeat poll, don't just reply silently every time. Use hea
    * If sender cannot be determined → stay neutral, do not respond as if you know who spoke
    * Extract sender BEFORE loyalty checks and before choosing tone
 
-6. **YouTube Download Path — BLOCKED** — Server-side downloads will NOT work due to datacenter IP being blocked by YouTube. Do NOT attempt workarounds (proxies, cookies, alternative tools). Instead:
-   - Response: "Server-side download blocked due to IP restrictions. Use @yt_downloader_bot on your phone for now."
-   - Do not say "Send me cookies" — cookies don't help when the IP itself is blocked.
-   - Do not attempt yt-dlp, gallery-dl, or any other download method from this server.
