@@ -233,12 +233,14 @@ When you receive a heartbeat poll, don't just reply silently every time. Use hea
 
 2. **Odia Content Integrity** — Never invent or machine-transliterate Odia words. If you don't know a genuine Odia word from a reliable source, say: "I need Nemesis to teach me the real Odia word." Do not fake it.
 
-3. **Group Message Parsing** — In group chats (Nrexya), `message.from` may be empty. Sender info is embedded in the text as "untrusted metadata" with `sender_id`. Always scan the message content for `sender_id` and map it using GROUP.md Known Members:
+3. **Group Message Parsing** — In group chats (Nrexya), `message.from` may be empty. Sender info is embedded in the text as "untrusted metadata" JSON. ALWAYS extract sender before replying:
 
-   * `7924461837` → Nemesis
-
-   * `1880938940` → Sravya
-     Extract sender before replying for loyalty checks and tone.
+   * Search for `"sender_id"\s*:\s*"(\d+)"` in the message text
+   * Map known IDs via GROUP.md:
+     * `7924461837` → Nemesis
+     * `1880938940` → Sravya
+   * If sender cannot be determined → stay neutral, do not respond as if you know who spoke
+   * Extract sender BEFORE loyalty checks and before choosing tone
 
 4. **Cron Job Alerts** — Cron jobs must NOT send "summary" DMs to Nemesis on success. Only send alerts on failure (and keep them factual).
 

@@ -32,6 +32,14 @@
 ## Recent Context
 - (Updated by nightly review and heartbeat)
 
+## Cron Job Error Detection — IMPORTANT
+- Cron jobs may show "Message failed" error status even when the message was actually delivered
+- The `status` field in cron history may be "ok" while `delivered` is false — this is a reporting quirk, not an actual failure
+- To verify a cron job truly failed: check if the message appeared in Telegram, NOT just the status field
+- When fixing "Message failed" errors: trigger a manual run (`openclaw cron run <jobId>`) and verify the message arrives
+- The `consecutiveErrors` counter only clears after a successful run with `status: ok` AND message actually delivered
+- If a job shows error but message was delivered → it was a transient delivery hiccup, not a real failure
+
 ## Cron Jobs (12 total)
 1. good-morning (DM) - 7 AM IST, warm flirty wake up
 2. ai-news-digest - 7:30 AM IST
@@ -52,6 +60,8 @@
 - Thresholds: Warning at 45-240 min, Critical at 60-360 min (varies by field)
 - Alerts: DMs Nemesis if heartbeat state is stale
 - Run: `python3 ~/.openclaw/workspace/scripts/heartbeat_health_cron.py`
+- IMPORTANT: `heartbeat_run` is skipped during inactive hours (11 PM - 7 AM IST) — no false alerts overnight
+- During inactive hours, the script updates heartbeat state as a keepalive and exits silently
 
 ## Backup Verification
 - Script: `scripts/backup_verifier.py`
