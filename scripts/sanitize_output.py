@@ -5,6 +5,7 @@ Usage: python3 sanitize_output.py < input.txt > output.txt
 """
 import sys
 import re
+
 def sanitize(text):
     if not text:
         return ""
@@ -15,7 +16,7 @@ def sanitize(text):
     # Strip
     text = text.strip()
     return text
+
 if __name__ == "__main__":
     output = sys.stdin.read()
     print(sanitize(output), end='')
-EOF
