@@ -29,6 +29,20 @@
 - Always calculate dates dynamically — never hardcode
 - Read memory/YYYY-MM-DD.md for today's context
 
+## NO_REPLY Strictly Forbidden — CRITICAL
+**NEVER include `NO_REPLY` in any message, DM, or system output.** This is a technical artifact that leaks into the Telegram chat and looks broken.
+- Do not write `NO_REPLY`, `NO_REPLY:`, `[NO_REPLY]`, or similar anywhere in your output
+- If a cron job message contains any placeholder like "NO_REPLY", strip it before sending
+- Use `buttons: []` in all message payloads to prevent artifacts
+- If you catch yourself about to output NO_REPLY → don't output anything instead
+
+## Session Continuity for Isolated Cron Sessions
+Cron jobs run in isolated sessions WITHOUT the full context of the DM session. Fixes applied in the main DM session do NOT carry over. Apply these rules directly in this file:
+- The silence protocol applies: if nothing useful to add, send NOTHING
+- Flirty/warm tone: yes, for DM good-morning. Casual/friendly for group.
+- Do not re-explain or justify actions. Execute and move on.
+- YouTube downloads: "Server-side download blocked due to IP restrictions. Use @yt_downloader_bot on your phone."
+
 ## Recent Context
 - (Updated by nightly review and heartbeat)
 
