@@ -85,7 +85,7 @@ openclaw config file          # show config file path
 ### Key Config Sections (Minimal Example)
 ```json5
 {
-  agents: { defaults: { workspace: "~/.openclaw/workspace" } },
+  agents: { defaults: { workspace: "./" } },
   channels: { telegram: { enabled: true, botToken: "123:abc" } },
   session: { dmScope: "per-channel-peer" },
 }

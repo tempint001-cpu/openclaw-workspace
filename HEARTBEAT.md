@@ -14,19 +14,23 @@
 
 After completing all checks above, ALWAYS persist state to `memory/heartbeat-state.json`:
 
-```bash
-python3 ~/.openclaw/workspace/skills/heartbeat-state-manager/scripts/update_state.py --field heartbeat_run
+Use your built-in `update_heartbeat_state` tool to persist state natively.
+For example, if you only ran a heartbeat check:
+```javascript
+update_heartbeat_state({ ran_heartbeat: true })
 ```
 
 If you sent a group message during this heartbeat, also update group_message:
-```bash
-python3 ~/.openclaw/workspace/skills/heartbeat-state-manager/scripts/update_state.py --field heartbeat_run --field group_message
+```javascript
+update_heartbeat_state({ ran_heartbeat: true, sent_group_message: true })
 ```
 
 If you pinged Nemesis during this heartbeat, also update nemesis_ping:
-```bash
-python3 ~/.openclaw/workspace/skills/heartbeat-state-manager/scripts/update_state.py --field heartbeat_run --field group_message --field nemesis_ping
+```javascript
+update_heartbeat_state({ ran_heartbeat: true, pinged_nemesis: true })
 ```
+
+*(Fallback: If the tool is unavailable, run `python3 ./skills/heartbeat-state-manager/scripts/update_state.py --field heartbeat_run` via shell).*
 
 This ensures continuity between sessions and allows monitoring of heartbeat health.
 

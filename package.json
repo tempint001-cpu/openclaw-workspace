@@ -1,4 +1,12 @@
 {
+  "name": "nexa-repo",
+  "version": "1.0.0",
+  "description": "Nexa OpenClaw Setup",
+  "scripts": {
+    "health-check": "python3 ./scripts/heartbeat_health_cron.py",
+    "verify-backup": "python3 ./scripts/backup_verifier.py",
+    "sanitize": "python3 ./scripts/sanitize_output.py"
+  },
   "dependencies": {
     "pdf-lib": "^1.17.1"
   }

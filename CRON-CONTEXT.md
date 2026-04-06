@@ -74,7 +74,7 @@ Cron jobs run in isolated sessions WITHOUT the full context of the DM session. F
 - Checks: heartbeat_run, group_message, nemesis_ping, git_push, memory_review
 - Thresholds: Warning at 45-240 min, Critical at 60-360 min (varies by field)
 - Alerts: DMs Nemesis if heartbeat state is stale
-- Run: `python3 ~/.openclaw/workspace/scripts/heartbeat_health_cron.py`
+- Run: `python3 ./scripts/heartbeat_health_cron.py`
 - IMPORTANT: `heartbeat_run` is skipped during inactive hours (11 PM - 7 AM IST) — no false alerts overnight
 - During inactive hours, the script updates heartbeat state as a keepalive and exits silently
 
@@ -82,7 +82,7 @@ Cron jobs run in isolated sessions WITHOUT the full context of the DM session. F
 - Script: `scripts/backup_verifier.py`
 - Checks: uncommitted memory files, push status
 - Alerts if memory files uncommitted >24h or push failed
-- Run: `python3 ~/.openclaw/workspace/scripts/backup_verifier.py`
+- Run: `python3 ./scripts/backup_verifier.py`
 
 ## Fix: heartbeat-health-monitor duplicate alerts
 **Problem**: Cron job has `--announce` flag + script sends Telegram DM = 2 messages.
@@ -99,5 +99,6 @@ openclaw cron edit <job-id> --announce false
 Current state has `group_message` and `git_push` stale since April 5.
 **To clear**:
 1. Send a group message → updates `group_message`
-2. Run git backup (`cd ~/.openclaw/workspace && git add -A && git commit -m "backup" && git push`) → updates `git_push`
+2. Run git backup (`git add -A && git commit -m "backup" && git push` from the workspace root) → updates `git_push`
 3. OR wait for respective cron jobs to run naturally
+ run naturally

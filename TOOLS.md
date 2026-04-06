@@ -17,7 +17,7 @@
 
 ## Quick Reference
 - Config: ~/.openclaw/openclaw.json (JSON5, hot-reloads)
-- Workspace: ~/.openclaw/workspace
+- Workspace: ./
 - Full system reference: docs/openclaw-reference.md
 - Cron context: CRON-CONTEXT.md
 
