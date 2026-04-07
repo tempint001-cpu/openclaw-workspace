@@ -32,6 +32,9 @@ def minutes_ago(timestamp_str):
 
     try:
         last_time = datetime.fromisoformat(timestamp_str.replace("Z", "+00:00"))
+        # Ensure last_time is timezone aware
+        if last_time.tzinfo is None:
+            last_time = last_time.replace(tzinfo=timezone.utc)
         now = datetime.now(timezone.utc)
         return (now - last_time).total_seconds() / 60
     except:

@@ -20,8 +20,9 @@ import urllib.error
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
-SCRIPT_DIR = Path(__file__).parent.parent
-STATE_FILE = SCRIPT_DIR / "memory" / "heartbeat-state.json"
+SCRIPT_DIR = Path(__file__).parent
+STATE_FILE = SCRIPT_DIR / ".." / "memory" / "heartbeat-state.json"
+STATE_FILE = STATE_FILE.resolve()
 NEMESIS_ID = "7924461837"
 
 THRESHOLDS = {
