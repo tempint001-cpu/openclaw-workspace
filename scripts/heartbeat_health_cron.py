@@ -16,6 +16,7 @@ import subprocess
 import sys
 import argparse
 import re
+import urllib.error
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -116,10 +117,12 @@ def get_bot_token():
         )
         if result.returncode == 0:
             token = result.stdout.strip()
-            if token and token != "undefined" and token != "null":
+            # Remove any potential quoting or extra characters
+            token = token.strip('"\'')
+            if token and token != "__OPENCLAW_REDACTED__" and token != "undefined" and token != "null":
                 return token
-    except:
-        pass
+    except Exception as e:
+        print(f"DEBUG: Error getting bot token: {e}")
     return None
 
 
@@ -141,8 +144,17 @@ def send_telegram_message(bot_token, chat_id, text):
     req = urllib.request.Request(
         url, data=data, headers={"Content-Type": "application/json"}
     )
-    with urllib.request.urlopen(req, timeout=15) as resp:
-        return json.loads(resp.read().decode("utf-8"))
+    try:
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            return json.loads(resp.read().decode("utf-8"))
+    except urllib.error.HTTPError as e:
+        print(f"HTTP Error {e.code}: {e.reason}")
+        print(f"URL: {url}")
+        print(f"Data: {data}")
+        raise
+    except urllib.error.URLError as e:
+        print(f"URL Error: {e.reason}")
+        raise
 
 
 def format_alert_message(critical, warnings):
@@ -198,7 +210,7 @@ def send_alert(critical, warnings, dry_run=False):
 
 
 def fallback_alert(critical, warnings):
-    """Fallback: use openclaw system event to DM Nemesis."""
+    """Fallback: use openclaw system event to alert (will go to default channels)."""
     message = format_alert_message(critical, warnings)
     message = message.replace("*", "").replace("_", "").replace("`", "")
     try:
@@ -211,17 +223,13 @@ def fallback_alert(critical, warnings):
                 "now",
                 "--text",
                 message,
-                "--channel",
-                "telegram",
-                "--to",
-                NEMESIS_ID,
             ],
             capture_output=True,
             text=True,
             timeout=30,
         )
         if result.returncode == 0:
-            print(f"Alert sent via system event to {NEMESIS_ID}")
+            print("Alert sent via system event")
         else:
             print(f"System event fallback also failed: {result.stderr}")
             sys.exit(1)
@@ -254,7 +262,11 @@ def main():
             print(f"  ⚠ {item}")
 
         if critical:
-            send_alert(critical, warnings, dry_run=args.dry_run)
+            if args.dry_run:
+                send_alert(critical, warnings, dry_run=True)
+            # Return the alert message for the cron job to handle
+            alert_message = format_alert_message(critical, warnings)
+            print(f"ALERT_MESSAGE::{alert_message}")
             sys.exit(2)
     else:
         print("Heartbeat state healthy")
