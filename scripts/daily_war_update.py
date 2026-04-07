@@ -2,10 +2,12 @@
 """
 Daily War Update Script - Triggers AI agent to generate war update via agentTurn
 """
+
 import json
 import subprocess
 import sys
 from datetime import datetime, timezone, timedelta
+
 
 def main():
     # Get current time for context
@@ -13,7 +15,7 @@ def main():
     ist_offset = timedelta(hours=5, minutes=30)
     now_ist = now_utc + ist_offset
     date_str = now_ist.strftime("%Y-%m-%d")
-    
+
     # Create the prompt for the AI agent
     prompt = f"""Today's date is {date_str}. 
 
@@ -48,25 +50,30 @@ Please execute this request using your available tools (including web search for
 
     # Create a one-time cron job to execute this prompt as an agentTurn
     # Use --at with relative time "30s" to run in 30 seconds
+    # NOTE: No --announce flag - the script handles its own message delivery
     cmd = [
-        "openclaw", "cron", "add",
-        "--name", "daily-war-update-execution",
-        "--at", "30s",
-        "--session", "isolated",
-        "--message", prompt,
-        "--announce",
-        "--channel", "telegram",
-        "--to", "7924461837",
-        "--delete-after-run"  # Clean up after execution
+        "openclaw",
+        "cron",
+        "add",
+        "--name",
+        "daily-war-update-execution",
+        "--at",
+        "30s",
+        "--session",
+        "isolated",
+        "--message",
+        prompt,
+        "--delete-after-run",  # Clean up after execution
     ]
-    
+
     result = subprocess.run(cmd, capture_output=True, text=True)
-    
+
     if result.returncode != 0:
         print(f"Failed to create execution job: {result.stderr}")
         sys.exit(1)
     else:
         print("War update execution job created successfully")
+
 
 if __name__ == "__main__":
     main()

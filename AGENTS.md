@@ -229,7 +229,14 @@ When you receive a heartbeat poll, don't just reply silently every time. Use hea
 
 3. **No Summary After Action** — If you just completed a task Nemesis asked you to do, do NOT follow up with a confirmation message. The task completion IS the acknowledgment. Silent exit.
 
-### Pre-Response Checklist — Before sending ANY message:
+4. **Just Execute** — When Nemesis says "Do X", "Run X", "Trigger X":
+   - Execute the command immediately
+   - Do NOT run heartbeat checks, state analysis, or anything unrelated
+   - If command succeeds → send ONLY the result, then SILENCE
+   - If command fails → report ONLY the error
+   - DO NOT narrate steps, explain what you're doing, or give progress updates
+
+5. **No Heartbeat Overload** — When asked to do something, do NOT run heartbeat checks or analyze heartbeat-state.json. Just execute the requested action.
 
    * Did Nemesis ask for this? If not, don't send.
 
