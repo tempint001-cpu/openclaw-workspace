@@ -1,4 +1,0 @@
-# Python Dependencies for Nexa OpenClaw Setup
-
-# The core Python scripts in this repository rely entirely on the Python Standard Library.
-# No external pip dependencies are required for the health checks or backup verification scripts.
