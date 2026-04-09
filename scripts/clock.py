@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-from datetime import datetime
-import pytz
+from datetime import datetime, timedelta
 
 def get_nemesis_time():
-    tz = pytz.timezone('Asia/Kolkata')
-    now = datetime.now(tz)
+    # IST is UTC+5:30
+    now = datetime.utcnow() + timedelta(hours=5, minutes=30)
     return {
         'iso': now.isoformat(),
         'time': now.strftime('%H:%M'),
