@@ -13,12 +13,15 @@ SCHEDULE = [
     ("15:00", "feminine-tip-daily"),
     ("16:00", "afternoon-jokes"),
     ("22:00", "goodnight-story"),
-    ("03:00", "nightly-memory-review")
+    ("03:00", "nightly-memory-review"),
+    ("*/15", "memory-batch-sync"),
+    ("0 *", "git-auto-commit")
 ]
 
 STATE_FILE = "/root/.openclaw/workspace/memory/scheduler_state.json"
 
 def get_ist_time():
+    # Exact same logic as clock.py
     return datetime.utcnow() + timedelta(hours=5, minutes=30)
 
 def load_state():
