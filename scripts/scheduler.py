@@ -35,7 +35,15 @@ def save_state(state):
         json.dump(state, f)
 
 def run_job(job_name):
-    print(f"[{get_ist_time().strftime('%H:%M IST')}] Running job: {job_name}")
+    log = f"[{get_ist_time().strftime('%H:%M IST')}] Running job: {job_name}"
+    print(log)
+    # Send all scheduler logs to monitoring group
+    subprocess.run([
+        'openclaw', 'message', 'send',
+        '--channel', 'telegram',
+        '--target', '-1003606834639',
+        '--message', log
+    ], capture_output=True)
 
 if __name__ == "__main__":
     state = load_state()
