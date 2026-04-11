@@ -37,7 +37,21 @@ def save_state(state):
 def run_job(job_name):
     log = f"[{get_ist_time().strftime('%H:%M IST')}] Running job: {job_name}"
     print(log)
-    # Send all scheduler logs to monitoring group
+    
+    if job_name == "git-auto-commit":
+        result = subprocess.run(['/root/.openclaw/workspace/scripts/git_backup.sh'], capture_output=True, text=True)
+        if result.returncode != 0:
+            # Only send failures to monitoring group
+            error_msg = f"❌ Git backup FAILED\n{result.stdout}\n{result.stderr}"
+            subprocess.run([
+                'openclaw', 'message', 'send',
+                '--channel', 'telegram',
+                '--target', '-5120995986',
+                '--message', error_msg
+            ], capture_output=True)
+        return
+    
+    # Send all other scheduler logs to main group
     subprocess.run([
         'openclaw', 'message', 'send',
         '--channel', 'telegram',
