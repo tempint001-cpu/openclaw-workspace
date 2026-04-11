@@ -17,3 +17,331 @@ Traceback (most recent call last):
            ^^^
 NameError: name 'sys' is not defined
 [23:30 IST] Running job: clock-tick
+[23:31 IST] Running job: clock-tick
+[23:32 IST] Running job: clock-tick
+[23:34 IST] Running job: clock-tick
+[23:35 IST] Running job: clock-tick
+[23:36 IST] Running job: clock-tick
+[23:37 IST] Running job: clock-tick
+[23:39 IST] Running job: clock-tick
+[23:40 IST] Running job: clock-tick
+[23:41 IST] Running job: clock-tick
+[23:42 IST] Running job: clock-tick
+[23:44 IST] Running job: clock-tick
+[23:45 IST] Running job: clock-tick
+[23:46 IST] Running job: clock-tick
+[23:47 IST] Running job: clock-tick
+[23:48 IST] Running job: clock-tick
+[23:49 IST] Running job: clock-tick
+[23:50 IST] Running job: clock-tick
+[23:51 IST] Running job: clock-tick
+[23:52 IST] Running job: clock-tick
+[23:53 IST] Running job: clock-tick
+[23:54 IST] Running job: clock-tick
+[23:55 IST] Running job: clock-tick
+[23:56 IST] Running job: clock-tick
+[23:57 IST] Running job: clock-tick
+[23:58 IST] Running job: clock-tick
+[23:59 IST] Running job: clock-tick
+[00:01 IST] Running job: clock-tick
+[00:01 IST] Running job: git-auto-commit
+[00:02 IST] Running job: clock-tick
+[00:03 IST] Running job: clock-tick
+[00:04 IST] Running job: clock-tick
+[00:05 IST] Running job: clock-tick
+[00:07 IST] Running job: clock-tick
+[00:08 IST] Running job: clock-tick
+[00:09 IST] Running job: clock-tick
+[00:10 IST] Running job: clock-tick
+[00:11 IST] Running job: clock-tick
+[00:13 IST] Running job: clock-tick
+[00:14 IST] Running job: clock-tick
+[00:15 IST] Running job: clock-tick
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 72, in send_notification
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1207, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 2060, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.11/subprocess.py", line 1251, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--target', '-1003951451198', '--message', '[00:16 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 504, in <module>
+    run_scheduler_once()
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 491, in run_scheduler_once
+    execute_job(job_name)
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 438, in execute_job
+    log_and_notify(job_name, result_status, final_details)
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 114, in log_and_notify
+    ok, err = send_notification(log_line)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 92, in send_notification
+    return False, f"{type(exc).name}: {exc}"
+                     ^^^^^^^^^^^^^^
+AttributeError: type object 'TimeoutExpired' has no attribute 'name'
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 72, in send_notification
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1207, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 2060, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.11/subprocess.py", line 1251, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--target', '-1003951451198', '--message', '[00:17 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 504, in <module>
+    run_scheduler_once()
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 491, in run_scheduler_once
+    execute_job(job_name)
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 438, in execute_job
+    log_and_notify(job_name, result_status, final_details)
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 114, in log_and_notify
+    ok, err = send_notification(log_line)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 92, in send_notification
+    return False, f"{type(exc).name}: {exc}"
+                     ^^^^^^^^^^^^^^
+AttributeError: type object 'TimeoutExpired' has no attribute 'name'
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 72, in send_notification
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1207, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 2060, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.11/subprocess.py", line 1251, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--target', '-1003951451198', '--message', '[00:18 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 504, in <module>
+    run_scheduler_once()
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 491, in run_scheduler_once
+    execute_job(job_name)
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 438, in execute_job
+    log_and_notify(job_name, result_status, final_details)
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 114, in log_and_notify
+    ok, err = send_notification(log_line)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 92, in send_notification
+    return False, f"{type(exc).name}: {exc}"
+                     ^^^^^^^^^^^^^^
+AttributeError: type object 'TimeoutExpired' has no attribute 'name'
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 72, in send_notification
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1207, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 2060, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.11/subprocess.py", line 1251, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--target', '-1003951451198', '--message', '[00:20 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 504, in <module>
+    run_scheduler_once()
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 491, in run_scheduler_once
+    execute_job(job_name)
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 438, in execute_job
+    log_and_notify(job_name, result_status, final_details)
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 114, in log_and_notify
+    ok, err = send_notification(log_line)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 92, in send_notification
+    return False, f"{type(exc).name}: {exc}"
+                     ^^^^^^^^^^^^^^
+AttributeError: type object 'TimeoutExpired' has no attribute 'name'
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 72, in send_notification
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1207, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 2060, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.11/subprocess.py", line 1251, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--target', '-1003951451198', '--message', '[00:21 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 504, in <module>
+    run_scheduler_once()
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 491, in run_scheduler_once
+    execute_job(job_name)
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 438, in execute_job
+    log_and_notify(job_name, result_status, final_details)
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 114, in log_and_notify
+    ok, err = send_notification(log_line)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 92, in send_notification
+    return False, f"{type(exc).name}: {exc}"
+                     ^^^^^^^^^^^^^^
+AttributeError: type object 'TimeoutExpired' has no attribute 'name'
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 72, in send_notification
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1207, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 2060, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.11/subprocess.py", line 1251, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--target', '-1003951451198', '--message', '[00:22 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 504, in <module>
+    run_scheduler_once()
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 491, in run_scheduler_once
+    execute_job(job_name)
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 438, in execute_job
+    log_and_notify(job_name, result_status, final_details)
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 114, in log_and_notify
+    ok, err = send_notification(log_line)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 92, in send_notification
+    return False, f"{type(exc).name}: {exc}"
+                     ^^^^^^^^^^^^^^
+AttributeError: type object 'TimeoutExpired' has no attribute 'name'
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 72, in send_notification
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1207, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 2060, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.11/subprocess.py", line 1251, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--target', '-1003951451198', '--message', '[00:23 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 504, in <module>
+    run_scheduler_once()
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 491, in run_scheduler_once
+    execute_job(job_name)
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 438, in execute_job
+    log_and_notify(job_name, result_status, final_details)
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 114, in log_and_notify
+    ok, err = send_notification(log_line)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 92, in send_notification
+    return False, f"{type(exc).name}: {exc}"
+                     ^^^^^^^^^^^^^^
+AttributeError: type object 'TimeoutExpired' has no attribute 'name'
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 72, in send_notification
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1207, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 2060, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.11/subprocess.py", line 1251, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--target', '-1003951451198', '--message', '[00:24 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 504, in <module>
+    run_scheduler_once()
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 491, in run_scheduler_once
+    execute_job(job_name)
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 438, in execute_job
+    log_and_notify(job_name, result_status, final_details)
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 114, in log_and_notify
+    ok, err = send_notification(log_line)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 92, in send_notification
+    return False, f"{type(exc).name}: {exc}"
+                     ^^^^^^^^^^^^^^
+AttributeError: type object 'TimeoutExpired' has no attribute 'name'
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 72, in send_notification
+    result = subprocess.run(
+             ^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1207, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 2060, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.11/subprocess.py", line 1251, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--target', '-1003951451198', '--message', '[00:25 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 504, in <module>
+    run_scheduler_once()
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 491, in run_scheduler_once
+    execute_job(job_name)
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 438, in execute_job
+    log_and_notify(job_name, result_status, final_details)
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 114, in log_and_notify
+    ok, err = send_notification(log_line)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 92, in send_notification
+    return False, f"{type(exc).name}: {exc}"
+                     ^^^^^^^^^^^^^^
+AttributeError: type object 'TimeoutExpired' has no attribute 'name'
