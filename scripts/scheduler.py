@@ -6,6 +6,8 @@ import os
 from pathlib import Path
 
 SCHEDULE = [
+    ("*", "clock-tick"),
+    ("00", "hourly-memory-summary"),
     ("06:00", "daily-session-reset"),
     ("07:00", "good-morning-dm"),
     ("07:30", "ai-news-digest"),
@@ -17,7 +19,6 @@ SCHEDULE = [
     ("22:00", "goodnight-story"),
     ("03:00", "nightly-memory-review"),
     ("04:00", "memory-archive"),
-    ("00,15,30,45", "memory-batch-sync"),
     ("01", "git-auto-commit"),
 ]
 
@@ -150,6 +151,52 @@ After selecting, UPDATE memory/wotd-history.json by adding this word to the 'use
                 timeout=60,
             )
             return
+            
+        if job_name == "nightly-memory-review":
+            msg = """
+Run the nightly memory distillation process:
+
+1. First read today's full daily memory file: memory/YYYY-MM-DD.md
+2. Read the full MEMORY.md file
+3. Review every single conversation from today, extract only:
+   - Important decisions made
+   - New rules, agreements, requirements
+   - Bugs found, issues fixed
+   - Lessons learned, mistakes
+   - New facts about people, preferences, boundaries
+   - Infrastructure changes
+4. Remove all casual banter, chit chat, filler messages. Only keep hard facts.
+5. Merge the extracted clean facts into MEMORY.md under the correct sections
+6. Do not duplicate existing entries
+7. Update MEMORY.md cleanly
+8. Send a short summary to Nemesis DM with how many items were added
+
+Do this properly. This is the most important job. Everything we talk about must survive here."""
+            run_isolated_job("nightly-memory-review", msg, "nemesis_dm")
+            return
+            
+        if job_name == "clock-tick":
+            # Just update state, no work - keeps current time loaded in scheduler state
+            return
+            
+        if job_name == "hourly-memory-summary":
+            msg = """
+Hourly memory summary job:
+
+1. Get all chat messages from last 60 minutes: both this DM and the main group
+2. Extract:
+   ✅ Hard facts, decisions, requests, bugs, changes, agreements
+   ✅ Mood, tone, emotional state, vibe, frustrations, satisfaction
+   ✅ Unspoken context, things implied between lines
+   ✅ Preferences, likes, dislikes that were shown not stated
+   ✅ Trust signals, jokes that landed, things that annoyed
+3. Do NOT discard banter and casual talk - this is where most of the context lives.
+4. Summarize cleanly, separate Facts section and Context / Tone section
+5. Append this summary cleanly to today's daily memory file
+6. No notifications required. Run silently.
+"""
+            run_isolated_job("hourly-memory-summary", msg, "monitor_group")
+            return
 
         if job_name == "feminine-tip-daily":
             msg = """Read memory/tips-history.json and check the 'used' array. Search for a fresh, practical self-care or wellness tip for women that is NOT in the used list.
@@ -226,6 +273,13 @@ def should_run(time_str, now, last_run, job_name):
     minute = now.minute
     current_date = now.strftime("%Y-%m-%d")
 
+    # Every minute tick
+    if time_str == "*":
+        last_run_val = last_run.get(job_name, "")
+        expected_run_key = f"{current_date}-{now.strftime('%H:%M')}"
+        if last_run_val != expected_run_key:
+            return True
+
     # Exact time match (e.g., "10:00")
     if time_str == current_time:
         last_run_val = last_run.get(job_name, "")
@@ -239,8 +293,16 @@ def should_run(time_str, now, last_run, job_name):
         allowed_minutes = [int(m) for m in time_str.split(",")]
         if minute in allowed_minutes:
             last_run_val = last_run.get(job_name, "")
-            if not last_run_val.startswith(current_date):
+            expected_run_key = f"{current_date}-{now.strftime('%H:%M')}"
+            if last_run_val != expected_run_key:
                 return True
+
+    # Single minute job
+    if time_str.isdigit() and int(time_str) == minute:
+        last_run_val = last_run.get(job_name, "")
+        expected_run_key = f"{current_date}-{now.strftime('%H:%M')}"
+        if last_run_val != expected_run_key:
+            return True
 
     return False
 

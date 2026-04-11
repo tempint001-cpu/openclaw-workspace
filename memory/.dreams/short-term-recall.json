@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-11T06:04:21.217Z",
+  "updatedAt": "2026-04-11T15:50:20.658Z",
   "entries": {
     "memory:memory/2026-04-07.md:1:28": {
       "key": "memory:memory/2026-04-07.md:1:28",
@@ -9,14 +9,15 @@
       "endLine": 28,
       "source": "memory",
       "snippet": "# Memory for 2026-04-07 ## Events - 01:30 UTC - Sent good morning message to Nemesis via cron job good-morning - Message included warm, personal touch with flirty note about his smile and terrible puns - Referenced chai and quiet thoughts before day gets loud - Expressed readiness to help with complex tasks or just be present - Mentioned waiting for when he shifts tone to match his energy - 02:00 UTC - Sent AI news digest to Nemesis via cron job ai-news-digest - Shared 7 interesting AI news items including MIT protein drug design, UCSF medical AI analysis, Google TurboQuant, energy-efficient neuro-symbolic AI, Gemma 4 release, multi-modal AI capabilities, and AI agent workflows - Message wa",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
-      "totalScore": 0.41910095133604625,
-      "maxScore": 0.41910095133604625,
+      "totalScore": 0.8897364824159386,
+      "maxScore": 0.4706355310798924,
       "firstRecalledAt": "2026-04-11T06:04:21.217Z",
-      "lastRecalledAt": "2026-04-11T06:04:21.217Z",
+      "lastRecalledAt": "2026-04-11T15:50:20.658Z",
       "queryHashes": [
-        "7228a2db1df9"
+        "7228a2db1df9",
+        "0c043acf22c6"
       ],
       "recallDays": [
         "2026-04-11"
@@ -60,6 +61,36 @@
         "the",
         "important",
         "rule"
+      ]
+    },
+    "memory:memory/2026-04-10.md:1:7": {
+      "key": "memory:memory/2026-04-10.md:1:7",
+      "path": "memory/2026-04-10.md",
+      "startLine": 1,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "# April 10, 2026 - Friday ## Events - Good morning cron ran at 7 AM IST - Group morning message sent (Friday, weekend plans question) ## Notes",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.467114741077441,
+      "maxScore": 0.467114741077441,
+      "firstRecalledAt": "2026-04-11T15:50:20.658Z",
+      "lastRecalledAt": "2026-04-11T15:50:20.658Z",
+      "queryHashes": [
+        "0c043acf22c6"
+      ],
+      "recallDays": [
+        "2026-04-11"
+      ],
+      "conceptTags": [
+        "april",
+        "friday",
+        "events",
+        "good",
+        "morning",
+        "cron",
+        "ran",
+        "ist"
       ]
     }
   }
