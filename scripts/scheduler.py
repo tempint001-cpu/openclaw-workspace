@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 import subprocess
 import json
 import os
+from pathlib import Path
 
 SCHEDULE = [
     ("06:00", "daily-session-reset"),
@@ -15,114 +16,265 @@ SCHEDULE = [
     ("16:00", "afternoon-jokes"),
     ("22:00", "goodnight-story"),
     ("03:00", "nightly-memory-review"),
-    ("*/15", "memory-batch-sync"),
-    ("0 *", "git-auto-commit")
+    ("04:00", "memory-archive"),
+    ("00,15,30,45", "memory-batch-sync"),
+    ("01", "git-auto-commit"),
 ]
 
-STATE_FILE = "/root/.openclaw/workspace/memory/scheduler_state.json"
+WORKSPACE = Path(__file__).parent.parent
+STATE_FILE = WORKSPACE / "memory" / "scheduler_state.json"
+CHANNELS_FILE = WORKSPACE / "memory" / "target_channels.json"
+
 
 def get_ist_time():
-    # Exact same logic as clock.py
     return datetime.utcnow() + timedelta(hours=5, minutes=30)
+
+
+def load_channels():
+    default = {
+        "monitor_group": "-1003951451198",
+        "main_group": "-1003606834639",
+        "nemesis_dm": "7924461837",
+        "sravya_dm": "1880938940",
+    }
+    if os.path.exists(CHANNELS_FILE):
+        try:
+            with open(CHANNELS_FILE, "r") as f:
+                return {**default, **json.load(f)}
+        except:
+            pass
+    return default
+
+
+CHANNELS = load_channels()
+
 
 def load_state():
     if os.path.exists(STATE_FILE):
-        with open(STATE_FILE, 'r') as f:
+        with open(STATE_FILE, "r") as f:
             return json.load(f)
     return {"last_run": {}}
 
+
 def save_state(state):
-    with open(STATE_FILE, 'w') as f:
-        json.dump(state, f)
+    with open(STATE_FILE, "w") as f:
+        json.dump(state, f, indent=2)
+
+
+def run_isolated_job(job_name, message, target_key):
+    target = CHANNELS.get(target_key, CHANNELS["main_group"])
+    try:
+        subprocess.run(
+            [
+                "openclaw",
+                "cron",
+                "add",
+                "--name",
+                f"{job_name}-dynamic",
+                "--at",
+                "30s",
+                "--session",
+                "isolated",
+                "--message",
+                message,
+                "--announce",
+                "--channel",
+                "telegram",
+                "--target",
+                target,
+            ],
+            capture_output=True,
+            timeout=30,
+        )
+    except Exception as e:
+        print(f"Error triggering {job_name}: {e}")
+
 
 def run_job(job_name):
     log = f"[{get_ist_time().strftime('%H:%M IST')}] Running job: {job_name}"
     print(log)
-    
-    # Send start notification to monitoring group for every job
-    subprocess.run([
-        'openclaw', 'message', 'send',
-        '--channel', 'telegram',
-        '--target', '-5120995986',
-        '--message', log
-    ], capture_output=True)
-    
-    if job_name == "git-auto-commit":
-        result = subprocess.run(['/root/.openclaw/workspace/scripts/git_backup.sh'], capture_output=True, text=True)
-        if result.returncode != 0:
-            # Only send failures to monitoring group
-            error_msg = f"❌ Git backup FAILED\n{result.stdout}\n{result.stderr}"
-            subprocess.run([
-                'openclaw', 'message', 'send',
-                '--channel', 'telegram',
-                '--target', '-5120995986',
-                '--message', error_msg
-            ], capture_output=True)
-        return
-        
-    if job_name == "word-of-the-day":
-        result = subprocess.run(['python3', '/root/.openclaw/workspace/scripts/wotd.py'], capture_output=True, text=True)
-        if result.returncode == 0:
-            subprocess.run([
-                'openclaw', 'message', 'send',
-                '--channel', 'telegram',
-                '--target', '-1003606834639',
-                '--message', result.stdout
-            ], capture_output=True)
-        return
-        
-    if job_name == "daily-session-reset":
-        subprocess.run(['/root/.openclaw/workspace/scripts/new_session_daily.sh'], capture_output=True)
-        return
-        
-    if job_name == "memory-batch-sync":
-        subprocess.run(['python3', '/root/.openclaw/workspace/scripts/memory_batch_sync.py'], capture_output=True)
-        return
-    
-    # Send all other scheduler logs to main group
-    subprocess.run([
-        'openclaw', 'message', 'send',
-        '--channel', 'telegram',
-        '--target', '-1003606834639',
-        '--message', log
-    ], capture_output=True)
 
-def should_run(time_str, now, last_run):
+    try:
+        if job_name == "git-auto-commit":
+            result = subprocess.run(
+                [str(WORKSPACE / "scripts" / "git_backup.sh")],
+                capture_output=True,
+                text=True,
+                timeout=60,
+            )
+            if result.returncode != 0:
+                error_msg = f"❌ Git backup FAILED\n{result.stdout}\n{result.stderr}"
+                subprocess.run(
+                    [
+                        "openclaw",
+                        "message",
+                        "send",
+                        "--channel",
+                        "telegram",
+                        "--target",
+                        CHANNELS["monitor_group"],
+                        "--message",
+                        error_msg,
+                    ],
+                    capture_output=True,
+                )
+            return
+
+        if job_name == "word-of-the-day":
+            msg = """Read memory/wotd-history.json and check the 'used' array. Search for an interesting, obscure English word (not commonly known) that is NOT in the used list. Get its definition, pronunciation (IPA), and a meaningful quote.
+            
+After selecting, UPDATE memory/wotd-history.json by adding this word to the 'used' array. Format: 📚 Word of the Day: **Word** - Definition - Pronounced: /ipa/ - > "quote" """
+            run_isolated_job("word-of-the-day", msg, "main_group")
+            return
+
+        if job_name == "daily-session-reset":
+            subprocess.run(
+                [str(WORKSPACE / "scripts" / "new_session_daily.sh")],
+                capture_output=True,
+                timeout=30,
+            )
+            return
+
+        if job_name == "memory-batch-sync":
+            subprocess.run(
+                ["python3", str(WORKSPACE / "scripts" / "memory_batch_sync.py")],
+                capture_output=True,
+                timeout=30,
+            )
+            return
+
+        if job_name == "memory-archive":
+            subprocess.run(
+                ["python3", str(WORKSPACE / "scripts" / "memory_archive.py")],
+                capture_output=True,
+                timeout=60,
+            )
+            return
+
+        if job_name == "feminine-tip-daily":
+            msg = """Read memory/tips-history.json and check the 'used' array. Search for a fresh, practical self-care or wellness tip for women that is NOT in the used list.
+            
+Topics to rotate: Skincare, Mental health, Fitness, Nutrition, Work-life balance, Fashion.
+After selecting, UPDATE memory/tips-history.json by adding this tip to the 'used' array."""
+            run_isolated_job("feminine-tip-daily", msg, "sravya_dm")
+            return
+
+        if job_name == "afternoon-jokes":
+            msg = """Read memory/jokes-history.json and check the 'used' array. Search for 2-3 fresh, clean, funny jokes that are NOT in the used list. Include one tech joke, one general joke, one pun.
+            
+After selecting, UPDATE memory/jokes-history.json by adding these jokes to the 'used' array."""
+            run_isolated_job("afternoon-jokes", msg, "main_group")
+            return
+
+        if job_name == "goodnight-story":
+            msg = """Read memory/stories-history.json and check the 'used' array. Search for a short bedtime story (under 300 words) that is NOT in the used list.
+            
+Topics to rotate: Indian mythology folktale, Motivational story, Nature story, Historical anecdote.
+After selecting, UPDATE memory/stories-history.json by adding this story topic to the 'used' array."""
+            run_isolated_job("goodnight-story", msg, "nemesis_dm")
+            return
+
+        if job_name == "good-morning-dm":
+            msg = """It's morning in India (IST). Search for: 1) A daily motivational quote, 2) Any interesting news from last night, 3) A positive affirmation. Send a warm, personal good morning message to Nemesis. Keep it brief, heartfelt, end with an emoji."""
+            run_isolated_job("good-morning-dm", msg, "nemesis_dm")
+            return
+
+        if job_name == "good-morning-group":
+            msg = """Search for a trending topic or interesting fact from today. Post a good morning message to the group with: 1) Warm greeting, 2) One interesting thing happening today, 3) An engaging question for the group. Keep it natural."""
+            run_isolated_job("good-morning-group", msg, "main_group")
+            return
+
+        if job_name == "ai-news-digest":
+            msg = """Search for today's top AI and tech news. Create a concise digest with: 1) 3-5 key headlines, 2) One sentence summary each, 3) Most interesting story highlighted. Format as a clean list."""
+            run_isolated_job("ai-news-digest", msg, "nemesis_dm")
+            return
+
+        if job_name == "daily-war-update":
+            msg = """Today's date is {date}. Provide a comprehensive global war and conflict update for Nemesis with:
+- Historical Context (~100 words): Overview of major ongoing global conflicts, focus on Iran-US situation, other significant conflicts worldwide, brief context on how situations evolved
+- Last 24 Hours Developments: Key events, specific updates on Iran-US tensions, other conflict zone updates, diplomatic initiatives
+- India-Specific Implications: How conflicts affect India's interests, predictions for future impact, India's potential role
+
+Cross-verify information using multiple sources (web search). Be concise but comprehensive. If uncertain, state the uncertainty rather than guessing. Send result to Nemesis via Telegram."""
+            run_isolated_job("daily-war-update", msg, "nemesis_dm")
+            return
+
+        # Default: log to main group
+        subprocess.run(
+            [
+                "openclaw",
+                "message",
+                "send",
+                "--channel",
+                "telegram",
+                "--target",
+                CHANNELS["main_group"],
+                "--message",
+                log,
+            ],
+            capture_output=True,
+        )
+
+    except subprocess.TimeoutExpired:
+        print(f"Job {job_name} timed out")
+    except Exception as e:
+        print(f"Error running {job_name}: {e}")
+
+
+def should_run(time_str, now, last_run, job_name):
     current_time = now.strftime("%H:%M")
-    
-    # Exact time match
-    if time_str == current_time and last_run.get(job_name) != current_time:
-        return True
-    
-    # Every X minutes interval: "*/15"
-    if time_str.startswith("*/"):
-        interval = int(time_str[2:])
-        minute = now.minute
-        
-        if minute % interval == 0:
-            last_run_minute = last_run.get(job_name, -1)
-            if last_run_minute != minute:
+    minute = now.minute
+    current_date = now.strftime("%Y-%m-%d")
+
+    # Exact time match (e.g., "10:00")
+    if time_str == current_time:
+        last_run_val = last_run.get(job_name, "")
+        if not last_run_val.startswith(current_date):
+            return True
+        if last_run_val != f"{current_date}-{current_time}":
+            return True
+
+    # Minute list: "00,15,30,45"
+    if "," in time_str:
+        allowed_minutes = [int(m) for m in time_str.split(",")]
+        if minute in allowed_minutes:
+            last_run_val = last_run.get(job_name, "")
+            if not last_run_val.startswith(current_date):
                 return True
-    
+
     return False
 
 
 if __name__ == "__main__":
     state = load_state()
     now = get_ist_time()
+    current_date = now.strftime("%Y-%m-%d")
 
     for time_str, job_name in SCHEDULE:
-        if should_run(time_str, now, state['last_run']):
+        if should_run(time_str, now, state["last_run"], job_name):
             run_job(job_name)
-            
+
             # Send completion notification
             log_done = f"[{now.strftime('%H:%M IST')}] ✅ Completed job: {job_name}"
-            subprocess.run([
-                'openclaw', 'message', 'send',
-                '--channel', 'telegram',
-                '--target', '-5120995986',
-                '--message', log_done
-            ], capture_output=True)
-            
-            state['last_run'][job_name] = now.minute
+            try:
+                subprocess.run(
+                    [
+                        "openclaw",
+                        "message",
+                        "send",
+                        "--channel",
+                        "telegram",
+                        "--target",
+                        CHANNELS["monitor_group"],
+                        "--message",
+                        log_done,
+                    ],
+                    capture_output=True,
+                    timeout=15,
+                )
+            except:
+                pass
+
+            # Store full ISO timestamp with date
+            state["last_run"][job_name] = f"{current_date}-{now.strftime('%H:%M')}"
             save_state(state)

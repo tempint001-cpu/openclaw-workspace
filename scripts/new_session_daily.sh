@@ -1,8 +1,9 @@
 #!/bin/bash
 # Daily clean session reset at 6 AM IST
 
-cd /root/.openclaw/workspace
-MONITOR_GROUP="-5120995986"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$SCRIPT_DIR"
+MONITOR_GROUP="-1003951451198"
 
 notify() {
     openclaw message send --channel telegram --target "${MONITOR_GROUP}" --message "[$(date +'%H:%M IST')] $1"
@@ -10,9 +11,9 @@ notify() {
 
 notify "🔄 Starting daily session reset..."
 
-# Clear temporary state
+# Clear temporary state (except heartbeat-state.json - keep for health tracking)
 rm -f memory/scheduler_state.json
-rm -f memory/heartbeat-state.json
+# rm -f memory/heartbeat-state.json  # Kept for continuity
 notify "✅ Cleared temporary state files"
 
 # Create fresh daily memory file for today
