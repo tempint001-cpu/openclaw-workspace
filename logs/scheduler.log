@@ -1,0 +1,19 @@
+[23:13 IST] Running job: clock-tick
+[23:14 IST] Running job: clock-tick
+[23:15 IST] Running job: clock-tick
+[23:16 IST] Running job: clock-tick
+[23:18 IST] Running job: clock-tick
+[23:19 IST] Running job: clock-tick
+[23:20 IST] Running job: clock-tick
+[23:21 IST] Running job: clock-tick
+[23:23 IST] Running job: clock-tick
+[23:24 IST] Running job: clock-tick
+[23:25 IST] Running job: clock-tick
+[23:26 IST] Running job: clock-tick
+[23:28 IST] Running job: clock-tick
+Traceback (most recent call last):
+  File "/root/.openclaw/workspace/scripts/scheduler.py", line 316, in <module>
+    if len(sys.argv) == 2:
+           ^^^
+NameError: name 'sys' is not defined
+[23:30 IST] Running job: clock-tick

@@ -3,6 +3,7 @@ from datetime import datetime, timedelta
 import subprocess
 import json
 import os
+import sys
 from pathlib import Path
 
 SCHEDULE = [
@@ -312,6 +313,38 @@ if __name__ == "__main__":
     now = get_ist_time()
     current_date = now.strftime("%Y-%m-%d")
 
+    # Manual job trigger via command line
+    if len(sys.argv) == 2:
+        job_name = sys.argv[1]
+        run_job(job_name)
+
+        # Send completion notification - ALWAYS send, manual or cron
+        log_done = f"[{now.strftime('%H:%M IST')}] ✅ Completed job: {job_name}"
+        try:
+            subprocess.run(
+                [
+                    "openclaw",
+                    "message",
+                    "send",
+                    "--channel",
+                    "telegram",
+                    "--target",
+                    CHANNELS["monitor_group"],
+                    "--message",
+                    log_done,
+                ],
+                capture_output=True,
+                timeout=15,
+            )
+        except:
+            pass
+
+        # Store full ISO timestamp with date
+        state["last_run"][job_name] = f"{current_date}-{now.strftime('%H:%M')}"
+        save_state(state)
+        sys.exit(0)
+
+    # Normal scheduled run
     for time_str, job_name in SCHEDULE:
         if should_run(time_str, now, state["last_run"], job_name):
             run_job(job_name)
