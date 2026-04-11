@@ -254,7 +254,7 @@ if __name__ == "__main__":
         if should_run(time_str, now, state["last_run"], job_name):
             run_job(job_name)
 
-            # Send completion notification
+            # Send completion notification - ALWAYS send, manual or cron
             log_done = f"[{now.strftime('%H:%M IST')}] ✅ Completed job: {job_name}"
             try:
                 subprocess.run(
