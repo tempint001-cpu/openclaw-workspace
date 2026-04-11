@@ -48,3 +48,107 @@
 [00:29 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:29 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
 [00:30 IST] ✅ SUCCESS: clock-tick | clock tick processed
 [00:30 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:30 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[00:31 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[00:31 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:31 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[00:32 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[00:32 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:32 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[00:34 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[00:34 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:34 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[00:35 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[00:35 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:35 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[00:36 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[00:36 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:36 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[00:37 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[00:37 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:37 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[00:38 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[00:38 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:38 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[00:39 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[00:39 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:39 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[00:41 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[00:41 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:41 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[00:42 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[00:42 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:42 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[00:43 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[00:43 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:43 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[00:44 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[00:44 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:44 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[00:45 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[00:45 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:45 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[00:46 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[00:46 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:46 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[00:48 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[00:48 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:48 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[00:49 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[00:49 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:49 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[00:50 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[00:50 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:50 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[00:51 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[00:51 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:51 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[00:52 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[00:52 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:52 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[00:53 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[00:53 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:53 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[00:55 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[00:55 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:55 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[00:56 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[00:56 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:56 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[00:57 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[00:57 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:57 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[00:58 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[00:58 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:58 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[00:59 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[00:59 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[00:59 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[01:00 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[01:00 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:00 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[01:01 IST] ✅ SUCCESS: hourly-memory-summary | trigger sent
+[01:01 IST] ❌ NOTIFY_FAILED: hourly-memory-summary | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:01 IST] ✅ SUCCESS: hourly-memory-summary | trigger sent']' timed out after 10 seconds
+[01:02 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[01:02 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:02 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[01:03 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[01:03 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:03 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[01:04 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[01:04 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:04 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[01:06 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[01:06 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:06 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[01:07 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[01:07 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:07 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[01:08 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[01:08 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:08 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[01:09 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[01:09 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:09 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[01:10 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[01:10 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:10 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[01:11 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[01:11 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:11 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[01:13 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[01:13 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:13 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[01:14 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[01:14 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:14 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[01:15 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[01:15 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:15 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[01:16 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[01:16 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:16 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[01:17 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[01:17 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:17 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[01:18 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[01:18 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:18 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[01:20 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[01:20 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:20 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[01:21 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[01:21 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:21 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[01:22 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[01:22 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:22 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[01:23 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[01:23 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:23 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[01:24 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[01:24 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:24 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[01:25 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[01:25 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:25 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[01:27 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[01:27 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:27 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[01:28 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[01:28 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:28 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[01:29 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[01:29 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:29 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
+[01:30 IST] ✅ SUCCESS: clock-tick | clock tick processed
+[01:30 IST] ❌ NOTIFY_FAILED: clock-tick | TimeoutExpired: Command '['openclaw', 'message', 'send', '--channel', 'telegram', '--to', '-1003951451198', '--message', '[01:30 IST] ✅ SUCCESS: clock-tick | clock tick processed']' timed out after 10 seconds
