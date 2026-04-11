@@ -39,6 +39,14 @@ def run_job(job_name):
     log = f"[{get_ist_time().strftime('%H:%M IST')}] Running job: {job_name}"
     print(log)
     
+    # Send start notification to monitoring group for every job
+    subprocess.run([
+        'openclaw', 'message', 'send',
+        '--channel', 'telegram',
+        '--target', '-5120995986',
+        '--message', log
+    ], capture_output=True)
+    
     if job_name == "git-auto-commit":
         result = subprocess.run(['/root/.openclaw/workspace/scripts/git_backup.sh'], capture_output=True, text=True)
         if result.returncode != 0:
@@ -66,6 +74,10 @@ def run_job(job_name):
     if job_name == "daily-session-reset":
         subprocess.run(['/root/.openclaw/workspace/scripts/new_session_daily.sh'], capture_output=True)
         return
+        
+    if job_name == "memory-batch-sync":
+        subprocess.run(['python3', '/root/.openclaw/workspace/scripts/memory_batch_sync.py'], capture_output=True)
+        return
     
     # Send all other scheduler logs to main group
     subprocess.run([
@@ -75,13 +87,42 @@ def run_job(job_name):
         '--message', log
     ], capture_output=True)
 
+def should_run(time_str, now, last_run):
+    current_time = now.strftime("%H:%M")
+    
+    # Exact time match
+    if time_str == current_time and last_run.get(job_name) != current_time:
+        return True
+    
+    # Every X minutes interval: "*/15"
+    if time_str.startswith("*/"):
+        interval = int(time_str[2:])
+        minute = now.minute
+        
+        if minute % interval == 0:
+            last_run_minute = last_run.get(job_name, -1)
+            if last_run_minute != minute:
+                return True
+    
+    return False
+
+
 if __name__ == "__main__":
     state = load_state()
     now = get_ist_time()
-    current_time = now.strftime("%H:%M")
 
     for time_str, job_name in SCHEDULE:
-        if time_str == current_time and state['last_run'].get(job_name) != current_time:
+        if should_run(time_str, now, state['last_run']):
             run_job(job_name)
-            state['last_run'][job_name] = current_time
+            
+            # Send completion notification
+            log_done = f"[{now.strftime('%H:%M IST')}] ✅ Completed job: {job_name}"
+            subprocess.run([
+                'openclaw', 'message', 'send',
+                '--channel', 'telegram',
+                '--target', '-5120995986',
+                '--message', log_done
+            ], capture_output=True)
+            
+            state['last_run'][job_name] = now.minute
             save_state(state)

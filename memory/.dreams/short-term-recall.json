@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "updatedAt": "2026-04-11T06:04:21.217Z",
+  "entries": {
+    "memory:memory/2026-04-07.md:1:28": {
+      "key": "memory:memory/2026-04-07.md:1:28",
+      "path": "memory/2026-04-07.md",
+      "startLine": 1,
+      "endLine": 28,
+      "source": "memory",
+      "snippet": "# Memory for 2026-04-07 ## Events - 01:30 UTC - Sent good morning message to Nemesis via cron job good-morning - Message included warm, personal touch with flirty note about his smile and terrible puns - Referenced chai and quiet thoughts before day gets loud - Expressed readiness to help with complex tasks or just be present - Mentioned waiting for when he shifts tone to match his energy - 02:00 UTC - Sent AI news digest to Nemesis via cron job ai-news-digest - Shared 7 interesting AI news items including MIT protein drug design, UCSF medical AI analysis, Google TurboQuant, energy-efficient neuro-symbolic AI, Gemma 4 release, multi-modal AI capabilities, and AI agent workflows - Message wa",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.41910095133604625,
+      "maxScore": 0.41910095133604625,
+      "firstRecalledAt": "2026-04-11T06:04:21.217Z",
+      "lastRecalledAt": "2026-04-11T06:04:21.217Z",
+      "queryHashes": [
+        "7228a2db1df9"
+      ],
+      "recallDays": [
+        "2026-04-11"
+      ],
+      "conceptTags": [
+        "good-morning",
+        "ai-news-digest",
+        "energy-efficient",
+        "neuro-symbolic",
+        "multi-modal",
+        "events",
+        "utc",
+        "sent"
+      ]
+    },
+    "memory:memory/2026-04-09.md:1:3": {
+      "key": "memory:memory/2026-04-09.md:1:3",
+      "path": "memory/2026-04-09.md",
+      "startLine": 1,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "## Decisions - Sravya is my sister. This is official now. This is the most important rule. ❤️",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "totalScore": 0.388726845915344,
+      "maxScore": 0.388726845915344,
+      "firstRecalledAt": "2026-04-11T06:04:21.217Z",
+      "lastRecalledAt": "2026-04-11T06:04:21.217Z",
+      "queryHashes": [
+        "7228a2db1df9"
+      ],
+      "recallDays": [
+        "2026-04-11"
+      ],
+      "conceptTags": [
+        "decisions",
+        "sravya",
+        "sister",
+        "official",
+        "now",
+        "the",
+        "important",
+        "rule"
+      ]
+    }
+  }
+}
