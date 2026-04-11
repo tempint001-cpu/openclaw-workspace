@@ -5,6 +5,7 @@ import json
 import os
 
 SCHEDULE = [
+    ("06:00", "daily-session-reset"),
     ("07:00", "good-morning-dm"),
     ("07:30", "ai-news-digest"),
     ("08:00", "good-morning-group"),
@@ -49,6 +50,21 @@ def run_job(job_name):
                 '--target', '-5120995986',
                 '--message', error_msg
             ], capture_output=True)
+        return
+        
+    if job_name == "word-of-the-day":
+        result = subprocess.run(['python3', '/root/.openclaw/workspace/scripts/wotd.py'], capture_output=True, text=True)
+        if result.returncode == 0:
+            subprocess.run([
+                'openclaw', 'message', 'send',
+                '--channel', 'telegram',
+                '--target', '-1003606834639',
+                '--message', result.stdout
+            ], capture_output=True)
+        return
+        
+    if job_name == "daily-session-reset":
+        subprocess.run(['/root/.openclaw/workspace/scripts/new_session_daily.sh'], capture_output=True)
         return
     
     # Send all other scheduler logs to main group
