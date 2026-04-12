@@ -1,0 +1,7 @@
+openclaw.json
+config.json
+*.key
+*.secret
+tokens
+.env
+private/
