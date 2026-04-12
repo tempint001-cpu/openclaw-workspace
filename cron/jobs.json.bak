@@ -219,7 +219,7 @@
       "name": "goodnight-story",
       "enabled": true,
       "createdAtMs": 1774971606687,
-      "updatedAtMs": 1775925039871,
+      "updatedAtMs": 1776011429213,
       "schedule": {
         "kind": "cron",
         "expr": "0 22 * * *",
@@ -237,11 +237,11 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1776011400000,
-        "lastRunAtMs": 1775925000147,
+        "nextRunAtMs": 1776097800000,
+        "lastRunAtMs": 1776011400006,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 39724,
+        "lastDurationMs": 29207,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -252,7 +252,7 @@
       "name": "github-backup",
       "enabled": true,
       "createdAtMs": 1774980647416,
-      "updatedAtMs": 1776009726491,
+      "updatedAtMs": 1776013301971,
       "schedule": {
         "expr": "0 */1 * * *",
         "kind": "cron",
@@ -270,11 +270,11 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1776013280664,
-        "lastRunAtMs": 1776009680675,
+        "nextRunAtMs": 1776016880664,
+        "lastRunAtMs": 1776013280672,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 45816,
+        "lastDurationMs": 21299,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -567,11 +567,10 @@
       "name": "water-reminder",
       "enabled": true,
       "createdAtMs": 1775727456880,
-      "updatedAtMs": 1776008472021,
+      "updatedAtMs": 1776016263409,
       "schedule": {
+        "expr": "0 */2 8-22 * *",
         "kind": "cron",
-        "expr": "0 */2 10-20 * *",
-        "tz": "Asia/Kolkata",
         "staggerMs": 300000
       },
       "sessionTarget": "isolated",
@@ -582,78 +581,18 @@
       },
       "delivery": {
         "mode": "announce",
-        "channel": "last",
+        "channel": "telegram",
         "to": "-1003606834639"
       },
       "state": {
-        "nextRunAtMs": 1776012072021,
-        "lastRunAtMs": 1776008463034,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 8987,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 37,
-        "lastError": "Channel is required when multiple channels are configured: telegram, streamchat Set delivery.channel explicitly or use a main session with a previous channel."
-      }
-    },
-    {
-      "id": "cf640af1-ecb5-4b6c-9a24-d8f058a323c2",
-      "name": "hourly-memory-summary",
-      "enabled": true,
-      "createdAtMs": 1775983798745,
-      "updatedAtMs": 1776008069053,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 * * * *",
-        "tz": "Asia/Kolkata",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Hourly memory summary job:\n1. Get all chat messages from last 60 minutes: both this DM and the main group\n2. Extract: Hard facts, decisions, requests, bugs, changes, agreements, Mood, tone, emotional state, vibe, frustrations, satisfaction, Unspoken context, things implied between lines, Preferences, likes, dislikes that were shown not stated, Trust signals, jokes that landed, things that annoyed\n3. Do NOT discard banter and casual talk - this is where most of the context lives.\n4. Summarize cleanly, separate Facts section and Context / Tone section\n5. Append this summary cleanly to today's daily memory file\n6. No notifications required. Run silently."
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "telegram",
-        "to": "-1003951451198"
-      },
-      "state": {
-        "nextRunAtMs": 1776011641389,
-        "lastRunAtMs": 1776008041395,
+        "nextRunAtMs": 1776016811694,
+        "lastRunAtMs": 1776012072027,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 27658,
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "8fbb860c-f349-4fdc-9ba8-bb49a6bc9586",
-      "name": "nightly-memory-review",
-      "enabled": true,
-      "createdAtMs": 1775983819884,
-      "updatedAtMs": 1775983819884,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 3 * * *",
-        "tz": "Asia/Kolkata"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Run the nightly memory distillation process:\n1. First read today's full daily memory file: memory/YYYY-MM-DD.md\n2. Read the full MEMORY.md file\n3. Review every single conversation from today, extract only: Important decisions made, New rules, agreements, requirements, Bugs found, issues fixed, Lessons learned, mistakes, New facts about people, preferences, boundaries, Infrastructure changes\n4. Remove all casual banter, chit chat, filler messages. Only keep hard facts.\n5. Merge the extracted clean facts into MEMORY.md under the correct sections\n6. Do not duplicate existing entries\n7. Update MEMORY.md cleanly\n8. Send a short summary to Nemesis DM with how many items were added"
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "telegram",
-        "to": "7924461837"
-      },
-      "state": {
-        "nextRunAtMs": 1776029400000
+        "lastDurationMs": 17477,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     },
     {
@@ -661,7 +600,7 @@
       "name": "hourly-memory-summary",
       "enabled": true,
       "createdAtMs": 1775986428815,
-      "updatedAtMs": 1776008580581,
+      "updatedAtMs": 1776015099195,
       "schedule": {
         "kind": "cron",
         "expr": "0 * * * *",
@@ -680,49 +619,15 @@
         "to": "-1003951451198"
       },
       "state": {
-        "nextRunAtMs": 1776011461107,
-        "lastRunAtMs": 1776008528726,
+        "nextRunAtMs": 1776018661107,
+        "lastRunAtMs": 1776015061114,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 51855,
+        "lastDurationMs": 38081,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 1,
-        "lastError": "⚠️ 📝 Edit: `in memory/2026-04-12.md` failed"
-      }
-    },
-    {
-      "id": "65d990d6-7b48-4b94-9d14-f5f2439f79df",
-      "name": "hourly-memory-summary",
-      "enabled": true,
-      "createdAtMs": 1775987304647,
-      "updatedAtMs": 1776007915736,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 * * * *",
-        "tz": "Asia/Kolkata",
-        "staggerMs": 300000
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Hourly memory summary job:\n1. Get all chat messages from last 60 minutes: both this DM and the main group\n2. Extract: Hard facts, decisions, requests, bugs, changes, agreements, Mood, tone, emotional state, vibe, frustrations, satisfaction, Unspoken context, things implied between lines, Preferences, likes, dislikes that were shown not stated, Trust signals, jokes that landed, things that annoyed\n3. Do NOT discard banter and casual talk - this is where most of the context lives.\n4. Summarize cleanly, separate Facts section and Context / Tone section\n5. Append this summary cleanly to today's daily memory file\n6. No notifications required. Run silently."
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "telegram",
-        "to": "-1003951451198"
-      },
-      "state": {
-        "nextRunAtMs": 1776011465050,
-        "lastRunAtMs": 1776007884928,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 30808,
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0
+        "lastError": "⚠️ 📝 Edit: `in ~/.openclaw/workspace/memory/2026-04-12.md` failed"
       }
     }
   ]

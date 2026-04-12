@@ -19,6 +19,12 @@ add_oc_cron() {
     local to="$3"
     local msg="$4"
     
+    # Check if job already exists first
+    if openclaw cron list | grep -q "$name"; then
+        echo "✅ $name already exists, skipping."
+        return 0
+    fi
+    
     echo "Registering $name..."
     openclaw cron add \
         --name "$name" \
