@@ -41,7 +41,7 @@
         "experimental": {
           "sessionMemory": false
         },
-        "provider": "gemini",
+        "provider": "none",
         "remote": {
           "apiKey": "AIzaSyB2-QmeVouz3kLfji00m2DNLqlpFiTuTEE"
         },
@@ -49,7 +49,7 @@
         "model": "gemini-embedding-001",
         "query": {
           "hybrid": {
-            "enabled": true,
+            "enabled": false,
             "vectorWeight": 0.7,
             "textWeight": 0.3,
             "mmr": {

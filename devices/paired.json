@@ -40,8 +40,8 @@
     "deviceId": "8f47cff1170a94e287c245c9cb691a350bb8a693a995174952b9f5958a30e84e",
     "publicKey": "o07BHl9OO1ubIinlMGbZdTaJPMyziUgw9UsYXCVfcnk",
     "platform": "linux",
-    "clientId": "cli",
-    "clientMode": "cli",
+    "clientId": "gateway-client",
+    "clientMode": "backend",
     "role": "operator",
     "roles": [
       "operator"
@@ -76,6 +76,7 @@
       }
     },
     "createdAtMs": 1774582489345,
-    "approvedAtMs": 1774582489345
+    "approvedAtMs": 1774582489345,
+    "displayName": "Telegram Exec Approvals (default)"
   }
 }
