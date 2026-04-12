@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "socket": {
+    "path": "/root/.openclaw/exec-approvals.sock",
+    "token": "lOTXU5R6aos3a3BeNouvFiRY0n1AAh_t"
+  },
+  "defaults": {},
+  "agents": {
+    "main": {
+      "allowlist": [
+        {
+          "id": "6e0b0809-d009-4d6b-9015-6c3f2c047220",
+          "pattern": "/usr/bin/find",
+          "lastUsedAt": 1775882082376,
+          "lastUsedCommand": "find /root/.openclaw/workspace -name \"*wotd*\" | sort",
+          "lastResolvedPath": "/usr/bin/find"
+        },
+        {
+          "id": "efd13e23-cea8-4df1-89b1-64e396e852f3",
+          "pattern": "/usr/bin/head",
+          "lastUsedAt": 1775856634315,
+          "lastUsedCommand": "head -100 /root/.openclaw/agents/main/sessions/sessions.json",
+          "lastResolvedPath": "/usr/bin/head"
+        },
+        {
+          "id": "b6209dff-88b0-431f-9fc5-2ae189f12040",
+          "pattern": "=command:27d3a63cac62b94d",
+          "source": "allow-always",
+          "lastUsedAt": 1775966692826
+        },
+        {
+          "id": "033ec444-e9ec-4892-84a5-2eedd34157a0",
+          "pattern": "=command:e638ee0f5e68cb3b",
+          "source": "allow-always",
+          "lastUsedAt": 1775969884901
+        }
+      ]
+    }
+  }
+}
