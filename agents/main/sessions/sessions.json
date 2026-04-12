@@ -733,7 +733,7 @@
   },
   "agent:main:telegram:direct:7924461837": {
     "sessionId": "a166438d-c040-4a9e-a61b-c75cf2bf7d0d",
-    "updatedAt": 1775987866732,
+    "updatedAt": 1775987987579,
     "systemSent": true,
     "abortedLastRun": false,
     "thinkingLevel": "high",
@@ -1162,13 +1162,13 @@
       ],
       "version": 0
     },
-    "status": "running",
-    "startedAt": 1775987866676,
+    "status": "done",
+    "startedAt": 1775987963596,
     "modelProvider": "kilocode",
     "model": "bytedance-seed/dola-seed-2.0-pro:free",
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1775987366415,
+      "generatedAt": 1775987963573,
       "sessionId": "a166438d-c040-4a9e-a61b-c75cf2bf7d0d",
       "sessionKey": "agent:main:telegram:direct:7924461837",
       "provider": "kilocode",
@@ -1188,9 +1188,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 41097,
+        "chars": 41087,
         "projectContextChars": 20194,
-        "nonProjectContextChars": 20903
+        "nonProjectContextChars": 20893
       },
       "injectedWorkspaceFiles": [
         {
@@ -1504,16 +1504,18 @@
         ]
       }
     },
-    "cacheRead": 1336,
+    "cacheRead": 38200,
     "cacheWrite": 0,
     "totalTokensFresh": true,
     "lastHeartbeatText": "We need to check if any actions are needed based on HEARTBEAT.md. Current time is 4:15 AM UTC, which is 9:45 AM IST (since IST is UTC+5:30). \n\nLet me check the checklist:\n- Time check first: Current IST time is 9:45 AM - this is within active hours (7 AM - 11 PM IST)\n- Inactive hours: Not applicable (it's 9:45 AM IST)\n- Pending tasks: Need to check if Nemesis mentioned any pending tasks in recent chats\n- Group vibes: Check if it's been 3+ hours since last group message\n- Group supervision: Read last 10 group messages if needed\n- Ping Nemesis: Check if it's been 4+ hours since last DM (between 10 AM-8 PM IST)\n- Group memory: Update GROUP.md if significant activity\n- Silent Execution: Execute background tasks silently\n- Exit Protocol: Send NOTHING if no tasks require attention\n\nFrom the heartbeat-state.json, I can see:\n- group_message: 2026-04-07T03:17:24.796347+00:00 (about 58 minutes ago)\n- git_push: 2026-04-07T03:17:24.796347+00:00 (about 58 minutes ago) \n- nemesis_ping: 2026-04-07T03:17:24.796347+00:00 (about 58 minutes ago)\n- heartbeat_run: 2026-04-07T03:46:57.673021+00:00 (about 30 minutes ago)\n- memory_review: 2026-04-06T09:22:44.678313+00:00 (about 19 hours ago)\n\nLet me check what the thresholds are from the heartbeat health monitor script I saw earlier:\n- heartbeat_run: warning 45min, critical 60min\n- group_message: warning 240min, critical 360min  \n- nemesis_ping: warning 360min, critical 480min\n- git_push: warning 180min, critical 360min\n- memory_review: warning 1560min (26h), critical 1800min (30h)\n\nSo currently:\n- heartbeat_run: 30 minutes ago - OK (under 45min warning)\n- group_message: 58 minutes ago - OK (under 240min warning)\n- nemesis_ping: 58 minutes ago - OK (under 360min warning)\n- git_push: 58 minutes ago - OK (under 180min warning)\n- memory_review: 19 hours ago = 1140 minutes ago - OK (under 1560min warning)\n\nEverything looks good based on the state file. However, I should check for pending tasks and do the other checks as per the HEARTBEAT.md.\n\nLet me check recent chats for any pending tasks mentioned by Nemesis. I should look at the recent conversation history. Let me check the session history for any pending tasks mentioned.\n\nBut first, let me check if there are any recent group messages that I should supervise or if I need to send a group vibe check.\n\nFrom the heartbeat-state.json, group_message was updated 58 minutes ago, which is recent. So group vibes check: it's been less than 3 hours since last group message, so I should skip sending a group message unless I have something highly relevant.\n\nLet me check the last 10 group messages to see if I said anything wrong that needs correction.\n\nBut wait, I should first check if Nemesis mentioned any pending tasks in recent chats. Let me look at the recent conversation.\n\nActually, let me just run through the HEARTBEAT.md checklist systematically:\n\n1. Time check first: Done - 9:45 AM IST\n2. Inactive hours: Not inactive (9:45 AM is between 7 AM-11 PM IST)\n3. Pending tasks: Need to check recent chats for any tasks Nemesis mentioned\n4. Group vibes: Last group message was 58 minutes ago (<3 hours), so only send if I have something highly relevant\n5. Group supervision: Read last 10 group messages if group_vibes check indicates I should\n6. Ping Nemesis: Last DM was 58 minutes ago (<4 hours), so no need to ping (only if 4+ hours)\n7. Group memory: Update GROUP.md if significant group activity since last check\n8. Silent Execution: Do background tasks silently\n9. State persistence: Update heartbeat-state.json (just did heartbeat_run)\n10. Exit Protocol: Send NOTHING if no tasks require attention\n\nLet me check for pending tasks by looking at recent conversation history where Nemesis might have asked me to do something.\n\nActually, let me check the session history for the current session to see if there are any pending tasks mentioned.\n\nBut first, let me just do the state persistence for heartbeat_run which I already did, and then check if I need to do anything else.\n\nLooking at the timestamps:\n- The last group_message, git_push, and nemesis_ping were all updated together at 03:17:24 UTC (which would be 8:47 AM IST)\n- The heartbeat_run was updated at 03:46:57 UTC (9:16 AM IST) \n- Current time is 04:15:00 UTC (9:45 AM IST)\n\nSo it looks like someone (probably me) recently updated those fields. The group_message timestamp suggests I sent a group message around 8:47 AM IST. Let me check what that was about.\n\nActually, let me just check if there are any specific things I need to do based on the recent conversation where Nemesis asked about the war update cron job.\n\nLooking back at the conversation, I see that Nemesis asked for a war update cron job at 9am IST, and I set it up. That was done around 04:00-04:07 UTC timeframe.\n\nLet me check if there are any other pending tasks.\n\nActually, let me just check the recent conversation for any explicit requests that I haven't fulfilled.\n\nLooking through the conversation:\n- Nemesis asked about files not being pushed to git - I answered that\n- Nemesis showed me the heartbeat health monitor summary - I analyzed and fixed it\n- Nemesis asked me to do point 1 (manually refresh heartbeat state) - I did that\n- Nemesis said the time was wrong - I checked and corrected it\n- Nemesis said \"Fine then\" \n- Nemesis said \"Dont keep me on seen\" - I responded\n- Nemesis said \"Fine\"\n- Nemesis said \"You left me on seen\" - I explained\n- Nemesis said \"Thats fine but you are my assistant and never leave me on seen. Understood?\" - I responded with a news digest\n- Nemesis shared updates to the operational manual - I pulled the changes\n- Nemesis asked \"done?\" - I responded\n- Nemesis asked \"how many files u pulled, check last modified and tell the count of files which were updated?\" - I answered\n- Nemesis said \"Good\"\n- Nemesis asked \"Is the backup cron working?\" - I checked and said yes\n- Nemesis said \"Fine babe thanks and Good morning!\"\n- Nemesis requested a war update cron job for 9am IST - I set it up and offered to test\n- Nemesis said \"Lets test it now\" - I attempted to test but ran into issues with the gateway calls\n- Then we got the write error about undefined variable\n- Then we got the error about missing timedelta import\n- Then we got the error about required option '--name' not specified\n- Then we got the error about unknown option '--schedule'\n- Then I fixed the script and it seems to have worked\n- Then Nemesis sent the HEARTBEAT.md update notice\n- Then we had the current heartbeat check\n\nIt looks like I've addressed all the explicit requests. Let me double-check if there are any pending tasks by looking for any action items Nemesis gave me that I haven't completed.\n\nActually, let me check if I need to update GROUP.md or do any group supervision.\n\nSince the last group_message was 58 minutes ago (at 3:17:24 UTC = 8:47 AM IST), and it's now 9:45 AM IST, that's only 58 minutes ago. So less than 3 hours have passed. According to HEARTBEAT.md, I should only send a group message if I have something highly relevant or valuable to share based on recent context.\n\nDo I have something highly relevant to share? Let me think...\n\nI just finished setting up the war update cron job (though we had some testing issues). I also pulled the latest operational manual updates. I fixed the heartbeat state issues. \n\nBut actually, looking at the HEARTBEAT.md more carefully: \"Group vibes: Check if it's been 3+ hours since the last group message (-1003606834639). ONLY send a message if you have something highly relevant or valuable to share based on recent context. Do not send empty 'just saying hi' messages. Skip entirely after 11 PM IST.\"\n\nSince it's only been 58 minutes (<3 hours), I should only send a group message if I have something highly relevant. \n\nWhat would be highly relevant? Maybe if I successfully got the war update cron job working? But we were still testing it when the conversation moved on.\n\nActually, let me check if the daily-war-update cron job I created is actually present and enabled.\n\nFrom the cron list I saw earlier: \"acdb7218-c2eb-439d-b557-e08df3671301 daily-war-update cron 0 9 * * * @ Asia/Kolkata... in 23h - idle isolated main -\"\n\nIt shows \"idle\" for last run, which makes sense since it's scheduled for 9am IST and it's currently 9:45 AM IST, so it should have run 45 minutes ago. But it says idle, which might mean it hasn't run yet or there was an issue.\n\nActually, wait - if it's 9:45 AM IST and the job is scheduled for 9:00 AM IST, it should have run 45 minutes ago. But the \"Next\" field shows \"in 23h\", which means it's scheduled to run next at 9:00 AM IST tomorrow. That suggests it didn't run today at 9:00 AM IST.\n\nLet me check the state again: \"lastRunAtMs\": not shown for this job in the list, which might mean it hasn't run yet.\n\nActually, looking at the cron list output: for the daily-war-update job, it shows:\n\"state\": {\n  \"nextRunAtMs\": 1775619000000\n}\n\nLet me convert that to see what time that is:\n<tool_call>\n<function=exec>\n<parameter=command>\ndate -d @1775619000 -u\n</parameter>\n</function>\n</tool_call>",
     "lastHeartbeatSentAt": 1775535308628,
     "contextTokens": 256000,
-    "inputTokens": 25356,
-    "outputTokens": 52,
+    "inputTokens": 39270,
+    "outputTokens": 99,
     "estimatedCostUsd": 0,
-    "totalTokens": 26692
+    "totalTokens": 39265,
+    "endedAt": 1775987987184,
+    "runtimeMs": 23588
   },
   "agent:main:telegram:slash:7924461837": {
     "origin": {
@@ -6591,8 +6593,8 @@
     "estimatedCostUsd": 0
   },
   "agent:main:cron:feee69f8-6016-4f8f-a09c-08b39d9a9191": {
-    "sessionId": "77e5ad3d-b993-45be-94f8-044b4def0f39",
-    "updatedAt": 1775984480684,
+    "sessionId": "2f64bdd1-88d2-4605-85a6-5d054bdf7af2",
+    "updatedAt": 1775988089289,
     "systemSent": true,
     "label": "Cron: github-backup",
     "skillsSnapshot": {
@@ -7132,11 +7134,9 @@
     "cacheWrite": 0,
     "estimatedCostUsd": 0,
     "sessionFile": "/root/.openclaw/agents/main/sessions/cab780cd-1c1f-45b1-98c1-71e9dca58082.jsonl",
-    "status": "done",
-    "startedAt": 1775966712328,
-    "abortedLastRun": false,
-    "endedAt": 1775966716952,
-    "runtimeMs": 4624
+    "status": "running",
+    "startedAt": 1775988089235,
+    "abortedLastRun": false
   },
   "agent:main:telegram:group:@nemesis": {
     "chatType": "group",
@@ -47711,5 +47711,553 @@
     "cacheRead": 61608,
     "cacheWrite": 0,
     "estimatedCostUsd": 0
+  },
+  "agent:main:cron:feee69f8-6016-4f8f-a09c-08b39d9a9191:run:2f64bdd1-88d2-4605-85a6-5d054bdf7af2": {
+    "sessionId": "2f64bdd1-88d2-4605-85a6-5d054bdf7af2",
+    "updatedAt": 1775988080690,
+    "systemSent": true,
+    "label": "Cron: github-backup",
+    "skillsSnapshot": {
+      "prompt": "\n\nThe following skills provide specialized instructions for specific tasks.\nUse the read tool to load a skill's file when the task matches its description.\nWhen a skill file references a relative path, resolve it against the skill directory (parent of SKILL.md / dirname of the path) and use that absolute path in tool commands.\n\n<available_skills>\n  <skill>\n    <name>1password</name>\n    <description>Set up and use 1Password CLI (op). Use when installing the CLI, enabling desktop app integration, signing in (single or multi-account), or reading/injecting/running secrets via op.</description>\n    <location>/usr/local/lib/node_modules/openclaw/skills/1password/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>blogwatcher</name>\n    <description>Monitor blogs and RSS/Atom feeds for updates using the blogwatcher CLI.</description>\n    <location>/usr/local/lib/node_modules/openclaw/skills/blogwatcher/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>clawhub</name>\n    <description>Use the ClawHub CLI to search, install, update, and publish agent skills from clawhub.com. Use when you need to fetch new skills on the fly, sync installed skills to latest or a specific version, or publish new/updated skill folders with the npm-installed clawhub CLI.</description>\n    <location>/usr/local/lib/node_modules/openclaw/skills/clawhub/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>gh-issues</name>\n    <description>Fetch GitHub issues, spawn sub-agents to implement fixes and open PRs, then monitor and address PR review comments. Usage: /gh-issues [owner/repo] [--label bug] [--limit 5] [--milestone v1.0] [--assignee @me] [--fork user/repo] [--watch] [--interval 5] [--reviews-only] [--cron] [--dry-run] [--model glm-5] [--notify-channel -1002381931352]</description>\n    <location>/usr/local/lib/node_modules/openclaw/skills/gh-issues/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>gifgrep</name>\n    <description>Search GIF providers with CLI/TUI, download results, and extract stills/sheets.</description>\n    <location>/usr/local/lib/node_modules/openclaw/skills/gifgrep/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>github</name>\n    <description>GitHub operations via `gh` CLI: issues, PRs, CI runs, code review, API queries. Use when: (1) checking PR status or CI, (2) creating/commenting on issues, (3) listing/filtering PRs or issues, (4) viewing run logs. NOT for: complex web UI interactions requiring manual browser flows (use browser tooling when available), bulk operations across many repos (script with gh api), or when gh auth is not configured.</description>\n    <location>/usr/local/lib/node_modules/openclaw/skills/github/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>gog</name>\n    <description>Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs.</description>\n    <location>/usr/local/lib/node_modules/openclaw/skills/gog/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>healthcheck</name>\n    <description>Host security hardening and risk-tolerance configuration for OpenClaw deployments. Use when a user asks for security audits, firewall/SSH/update hardening, risk posture, exposure review, OpenClaw cron scheduling for periodic checks, or version status checks on a machine running OpenClaw (laptop, workstation, Pi, VPS).</description>\n    <location>/usr/local/lib/node_modules/openclaw/skills/healthcheck/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>mcporter</name>\n    <description>Use the mcporter CLI to list, configure, auth, and call MCP servers/tools directly (HTTP or stdio), including ad-hoc servers, config edits, and CLI/type generation.</description>\n    <location>/usr/local/lib/node_modules/openclaw/skills/mcporter/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>node-connect</name>\n    <description>Diagnose OpenClaw node connection and pairing failures for Android, iOS, and macOS companion apps. Use when QR/setup code/manual connect fails, local Wi-Fi works but VPS/tailnet does not, or errors mention pairing required, unauthorized, bootstrap token invalid or expired, gateway.bind, gateway.remote.url, Tailscale, or plugins.entries.device-pair.config.publicUrl.</description>\n    <location>/usr/local/lib/node_modules/openclaw/skills/node-connect/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>session-logs</name>\n    <description>Search and analyze your own session logs (older/parent conversations) using jq.</description>\n    <location>/usr/local/lib/node_modules/openclaw/skills/session-logs/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>skill-creator</name>\n    <description>Create, edit, improve, or audit AgentSkills. Use when creating a new skill from scratch or when asked to improve, review, audit, tidy up, or clean up an existing skill or SKILL.md file. Also use when editing or restructuring a skill directory (moving files to references/ or scripts/, removing stale content, validating against the AgentSkills spec). Triggers on phrases like &quot;create a skill&quot;, &quot;author a skill&quot;, &quot;tidy up a skill&quot;, &quot;improve this skill&quot;, &quot;review the skill&quot;, &quot;clean up the skill&quot;, &quot;audit the skill&quot;.</description>\n    <location>/usr/local/lib/node_modules/openclaw/skills/skill-creator/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>summarize</name>\n    <description>Summarize or extract text/transcripts from URLs, podcasts, and local files (great fallback for “transcribe this YouTube/video”).</description>\n    <location>/usr/local/lib/node_modules/openclaw/skills/summarize/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>tmux</name>\n    <description>Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane output.</description>\n    <location>/usr/local/lib/node_modules/openclaw/skills/tmux/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>video-frames</name>\n    <description>Extract frames or short clips from videos using ffmpeg.</description>\n    <location>/usr/local/lib/node_modules/openclaw/skills/video-frames/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>weather</name>\n    <description>Get current weather and forecasts via wttr.in or Open-Meteo. Use when: user asks about weather, temperature, or forecasts for any location. NOT for: historical weather data, severe weather alerts, or detailed meteorological analysis. No API key needed.</description>\n    <location>/usr/local/lib/node_modules/openclaw/skills/weather/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>xurl</name>\n    <description>A CLI tool for making authenticated requests to the X (Twitter) API. Use this skill when you need to post tweets, reply, quote, search, read posts, manage followers, send DMs, upload media, or interact with any X API v2 endpoint.</description>\n    <location>/usr/local/lib/node_modules/openclaw/skills/xurl/SKILL.md</location>\n  </skill>\n  <skill>\n    <name>cron-health-check</name>\n    <description>Monitors OpenClaw cron job health, identifies failures, timeouts, and delivery issues.</description>\n    <location>~/.openclaw/workspace/skills/cron-health-check/SKILL.md</location>\n  </skill>\n</available_skills>",
+      "skills": [
+        {
+          "name": "1password",
+          "requiredEnv": []
+        },
+        {
+          "name": "blogwatcher",
+          "requiredEnv": []
+        },
+        {
+          "name": "clawhub",
+          "requiredEnv": []
+        },
+        {
+          "name": "gh-issues",
+          "primaryEnv": "GH_TOKEN",
+          "requiredEnv": []
+        },
+        {
+          "name": "gifgrep",
+          "requiredEnv": []
+        },
+        {
+          "name": "github",
+          "requiredEnv": []
+        },
+        {
+          "name": "gog",
+          "requiredEnv": []
+        },
+        {
+          "name": "healthcheck"
+        },
+        {
+          "name": "mcporter",
+          "requiredEnv": []
+        },
+        {
+          "name": "node-connect"
+        },
+        {
+          "name": "session-logs",
+          "requiredEnv": []
+        },
+        {
+          "name": "skill-creator"
+        },
+        {
+          "name": "summarize",
+          "requiredEnv": []
+        },
+        {
+          "name": "tmux",
+          "requiredEnv": []
+        },
+        {
+          "name": "video-frames",
+          "requiredEnv": []
+        },
+        {
+          "name": "weather",
+          "requiredEnv": []
+        },
+        {
+          "name": "xurl",
+          "requiredEnv": []
+        },
+        {
+          "name": "cron-health-check"
+        }
+      ],
+      "resolvedSkills": [
+        {
+          "name": "1password",
+          "description": "Set up and use 1Password CLI (op). Use when installing the CLI, enabling desktop app integration, signing in (single or multi-account), or reading/injecting/running secrets via op.",
+          "filePath": "/usr/local/lib/node_modules/openclaw/skills/1password/SKILL.md",
+          "baseDir": "/usr/local/lib/node_modules/openclaw/skills/1password",
+          "source": "openclaw-bundled",
+          "disableModelInvocation": false
+        },
+        {
+          "name": "blogwatcher",
+          "description": "Monitor blogs and RSS/Atom feeds for updates using the blogwatcher CLI.",
+          "filePath": "/usr/local/lib/node_modules/openclaw/skills/blogwatcher/SKILL.md",
+          "baseDir": "/usr/local/lib/node_modules/openclaw/skills/blogwatcher",
+          "source": "openclaw-bundled",
+          "disableModelInvocation": false
+        },
+        {
+          "name": "clawhub",
+          "description": "Use the ClawHub CLI to search, install, update, and publish agent skills from clawhub.com. Use when you need to fetch new skills on the fly, sync installed skills to latest or a specific version, or publish new/updated skill folders with the npm-installed clawhub CLI.",
+          "filePath": "/usr/local/lib/node_modules/openclaw/skills/clawhub/SKILL.md",
+          "baseDir": "/usr/local/lib/node_modules/openclaw/skills/clawhub",
+          "source": "openclaw-bundled",
+          "disableModelInvocation": false
+        },
+        {
+          "name": "gh-issues",
+          "description": "Fetch GitHub issues, spawn sub-agents to implement fixes and open PRs, then monitor and address PR review comments. Usage: /gh-issues [owner/repo] [--label bug] [--limit 5] [--milestone v1.0] [--assignee @me] [--fork user/repo] [--watch] [--interval 5] [--reviews-only] [--cron] [--dry-run] [--model glm-5] [--notify-channel -1002381931352]",
+          "filePath": "/usr/local/lib/node_modules/openclaw/skills/gh-issues/SKILL.md",
+          "baseDir": "/usr/local/lib/node_modules/openclaw/skills/gh-issues",
+          "source": "openclaw-bundled",
+          "disableModelInvocation": false
+        },
+        {
+          "name": "gifgrep",
+          "description": "Search GIF providers with CLI/TUI, download results, and extract stills/sheets.",
+          "filePath": "/usr/local/lib/node_modules/openclaw/skills/gifgrep/SKILL.md",
+          "baseDir": "/usr/local/lib/node_modules/openclaw/skills/gifgrep",
+          "source": "openclaw-bundled",
+          "disableModelInvocation": false
+        },
+        {
+          "name": "github",
+          "description": "GitHub operations via `gh` CLI: issues, PRs, CI runs, code review, API queries. Use when: (1) checking PR status or CI, (2) creating/commenting on issues, (3) listing/filtering PRs or issues, (4) viewing run logs. NOT for: complex web UI interactions requiring manual browser flows (use browser tooling when available), bulk operations across many repos (script with gh api), or when gh auth is not configured.",
+          "filePath": "/usr/local/lib/node_modules/openclaw/skills/github/SKILL.md",
+          "baseDir": "/usr/local/lib/node_modules/openclaw/skills/github",
+          "source": "openclaw-bundled",
+          "disableModelInvocation": false
+        },
+        {
+          "name": "gog",
+          "description": "Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs.",
+          "filePath": "/usr/local/lib/node_modules/openclaw/skills/gog/SKILL.md",
+          "baseDir": "/usr/local/lib/node_modules/openclaw/skills/gog",
+          "source": "openclaw-bundled",
+          "disableModelInvocation": false
+        },
+        {
+          "name": "healthcheck",
+          "description": "Host security hardening and risk-tolerance configuration for OpenClaw deployments. Use when a user asks for security audits, firewall/SSH/update hardening, risk posture, exposure review, OpenClaw cron scheduling for periodic checks, or version status checks on a machine running OpenClaw (laptop, workstation, Pi, VPS).",
+          "filePath": "/usr/local/lib/node_modules/openclaw/skills/healthcheck/SKILL.md",
+          "baseDir": "/usr/local/lib/node_modules/openclaw/skills/healthcheck",
+          "source": "openclaw-bundled",
+          "disableModelInvocation": false
+        },
+        {
+          "name": "mcporter",
+          "description": "Use the mcporter CLI to list, configure, auth, and call MCP servers/tools directly (HTTP or stdio), including ad-hoc servers, config edits, and CLI/type generation.",
+          "filePath": "/usr/local/lib/node_modules/openclaw/skills/mcporter/SKILL.md",
+          "baseDir": "/usr/local/lib/node_modules/openclaw/skills/mcporter",
+          "source": "openclaw-bundled",
+          "disableModelInvocation": false
+        },
+        {
+          "name": "node-connect",
+          "description": "Diagnose OpenClaw node connection and pairing failures for Android, iOS, and macOS companion apps. Use when QR/setup code/manual connect fails, local Wi-Fi works but VPS/tailnet does not, or errors mention pairing required, unauthorized, bootstrap token invalid or expired, gateway.bind, gateway.remote.url, Tailscale, or plugins.entries.device-pair.config.publicUrl.",
+          "filePath": "/usr/local/lib/node_modules/openclaw/skills/node-connect/SKILL.md",
+          "baseDir": "/usr/local/lib/node_modules/openclaw/skills/node-connect",
+          "source": "openclaw-bundled",
+          "disableModelInvocation": false
+        },
+        {
+          "name": "session-logs",
+          "description": "Search and analyze your own session logs (older/parent conversations) using jq.",
+          "filePath": "/usr/local/lib/node_modules/openclaw/skills/session-logs/SKILL.md",
+          "baseDir": "/usr/local/lib/node_modules/openclaw/skills/session-logs",
+          "source": "openclaw-bundled",
+          "disableModelInvocation": false
+        },
+        {
+          "name": "skill-creator",
+          "description": "Create, edit, improve, or audit AgentSkills. Use when creating a new skill from scratch or when asked to improve, review, audit, tidy up, or clean up an existing skill or SKILL.md file. Also use when editing or restructuring a skill directory (moving files to references/ or scripts/, removing stale content, validating against the AgentSkills spec). Triggers on phrases like \"create a skill\", \"author a skill\", \"tidy up a skill\", \"improve this skill\", \"review the skill\", \"clean up the skill\", \"audit the skill\".",
+          "filePath": "/usr/local/lib/node_modules/openclaw/skills/skill-creator/SKILL.md",
+          "baseDir": "/usr/local/lib/node_modules/openclaw/skills/skill-creator",
+          "source": "openclaw-bundled",
+          "disableModelInvocation": false
+        },
+        {
+          "name": "summarize",
+          "description": "Summarize or extract text/transcripts from URLs, podcasts, and local files (great fallback for “transcribe this YouTube/video”).",
+          "filePath": "/usr/local/lib/node_modules/openclaw/skills/summarize/SKILL.md",
+          "baseDir": "/usr/local/lib/node_modules/openclaw/skills/summarize",
+          "source": "openclaw-bundled",
+          "disableModelInvocation": false
+        },
+        {
+          "name": "tmux",
+          "description": "Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane output.",
+          "filePath": "/usr/local/lib/node_modules/openclaw/skills/tmux/SKILL.md",
+          "baseDir": "/usr/local/lib/node_modules/openclaw/skills/tmux",
+          "source": "openclaw-bundled",
+          "disableModelInvocation": false
+        },
+        {
+          "name": "video-frames",
+          "description": "Extract frames or short clips from videos using ffmpeg.",
+          "filePath": "/usr/local/lib/node_modules/openclaw/skills/video-frames/SKILL.md",
+          "baseDir": "/usr/local/lib/node_modules/openclaw/skills/video-frames",
+          "source": "openclaw-bundled",
+          "disableModelInvocation": false
+        },
+        {
+          "name": "weather",
+          "description": "Get current weather and forecasts via wttr.in or Open-Meteo. Use when: user asks about weather, temperature, or forecasts for any location. NOT for: historical weather data, severe weather alerts, or detailed meteorological analysis. No API key needed.",
+          "filePath": "/usr/local/lib/node_modules/openclaw/skills/weather/SKILL.md",
+          "baseDir": "/usr/local/lib/node_modules/openclaw/skills/weather",
+          "source": "openclaw-bundled",
+          "disableModelInvocation": false
+        },
+        {
+          "name": "xurl",
+          "description": "A CLI tool for making authenticated requests to the X (Twitter) API. Use this skill when you need to post tweets, reply, quote, search, read posts, manage followers, send DMs, upload media, or interact with any X API v2 endpoint.",
+          "filePath": "/usr/local/lib/node_modules/openclaw/skills/xurl/SKILL.md",
+          "baseDir": "/usr/local/lib/node_modules/openclaw/skills/xurl",
+          "source": "openclaw-bundled",
+          "disableModelInvocation": false
+        },
+        {
+          "name": "cron-health-check",
+          "description": "Monitors OpenClaw cron job health, identifies failures, timeouts, and delivery issues.",
+          "filePath": "/root/.openclaw/workspace/skills/cron-health-check/SKILL.md",
+          "baseDir": "/root/.openclaw/workspace/skills/cron-health-check",
+          "source": "openclaw-workspace",
+          "disableModelInvocation": false
+        }
+      ],
+      "version": 0
+    },
+    "modelProvider": "kilocode",
+    "model": "kilo-auto/free",
+    "authProfileOverride": "kilocode:default",
+    "authProfileOverrideSource": "auto",
+    "authProfileOverrideCompactionCount": 0,
+    "systemPromptReport": {
+      "source": "run",
+      "generatedAt": 1775984487416,
+      "sessionId": "77e5ad3d-b993-45be-94f8-044b4def0f39",
+      "sessionKey": "agent:main:cron:feee69f8-6016-4f8f-a09c-08b39d9a9191",
+      "provider": "kilocode",
+      "model": "kilo-auto/free",
+      "workspaceDir": "/root/.openclaw/workspace",
+      "bootstrapMaxChars": 20000,
+      "bootstrapTotalMaxChars": 150000,
+      "bootstrapTruncation": {
+        "warningMode": "once",
+        "warningShown": false,
+        "truncatedFiles": 0,
+        "nearLimitFiles": 0,
+        "totalNearLimit": false
+      },
+      "sandbox": {
+        "mode": "off",
+        "sandboxed": false
+      },
+      "systemPrompt": {
+        "chars": 31235,
+        "projectContextChars": 18965,
+        "nonProjectContextChars": 12270
+      },
+      "injectedWorkspaceFiles": [
+        {
+          "name": "AGENTS.md",
+          "path": "/root/.openclaw/workspace/AGENTS.md",
+          "missing": false,
+          "rawChars": 9278,
+          "injectedChars": 9278,
+          "truncated": false
+        },
+        {
+          "name": "SOUL.md",
+          "path": "/root/.openclaw/workspace/SOUL.md",
+          "missing": false,
+          "rawChars": 4627,
+          "injectedChars": 4627,
+          "truncated": false
+        },
+        {
+          "name": "TOOLS.md",
+          "path": "/root/.openclaw/workspace/TOOLS.md",
+          "missing": false,
+          "rawChars": 2721,
+          "injectedChars": 2721,
+          "truncated": false
+        },
+        {
+          "name": "IDENTITY.md",
+          "path": "/root/.openclaw/workspace/IDENTITY.md",
+          "missing": false,
+          "rawChars": 183,
+          "injectedChars": 183,
+          "truncated": false
+        },
+        {
+          "name": "USER.md",
+          "path": "/root/.openclaw/workspace/USER.md",
+          "missing": false,
+          "rawChars": 1361,
+          "injectedChars": 1361,
+          "truncated": false
+        }
+      ],
+      "skills": {
+        "promptChars": 7156,
+        "entries": [
+          {
+            "name": "1password",
+            "blockChars": 345
+          },
+          {
+            "name": "blogwatcher",
+            "blockChars": 240
+          },
+          {
+            "name": "clawhub",
+            "blockChars": 429
+          },
+          {
+            "name": "gh-issues",
+            "blockChars": 505
+          },
+          {
+            "name": "gifgrep",
+            "blockChars": 240
+          },
+          {
+            "name": "github",
+            "blockChars": 569
+          },
+          {
+            "name": "gog",
+            "blockChars": 229
+          },
+          {
+            "name": "healthcheck",
+            "blockChars": 488
+          },
+          {
+            "name": "mcporter",
+            "blockChars": 327
+          },
+          {
+            "name": "node-connect",
+            "blockChars": 538
+          },
+          {
+            "name": "session-logs",
+            "blockChars": 250
+          },
+          {
+            "name": "skill-creator",
+            "blockChars": 756
+          },
+          {
+            "name": "summarize",
+            "blockChars": 293
+          },
+          {
+            "name": "tmux",
+            "blockChars": 252
+          },
+          {
+            "name": "video-frames",
+            "blockChars": 226
+          },
+          {
+            "name": "weather",
+            "blockChars": 413
+          },
+          {
+            "name": "xurl",
+            "blockChars": 384
+          },
+          {
+            "name": "cron-health-check",
+            "blockChars": 252
+          }
+        ]
+      },
+      "tools": {
+        "listChars": 0,
+        "schemaChars": 26271,
+        "entries": [
+          {
+            "name": "read",
+            "summaryChars": 298,
+            "schemaChars": 304,
+            "propertiesCount": 3
+          },
+          {
+            "name": "edit",
+            "summaryChars": 326,
+            "schemaChars": 834,
+            "propertiesCount": 2
+          },
+          {
+            "name": "write",
+            "summaryChars": 127,
+            "schemaChars": 225,
+            "propertiesCount": 2
+          },
+          {
+            "name": "exec",
+            "summaryChars": 539,
+            "schemaChars": 1098,
+            "propertiesCount": 12
+          },
+          {
+            "name": "process",
+            "summaryChars": 416,
+            "schemaChars": 961,
+            "propertiesCount": 12
+          },
+          {
+            "name": "whatsapp_login",
+            "summaryChars": 74,
+            "schemaChars": 162,
+            "propertiesCount": 3
+          },
+          {
+            "name": "canvas",
+            "summaryChars": 106,
+            "schemaChars": 661,
+            "propertiesCount": 18
+          },
+          {
+            "name": "nodes",
+            "summaryChars": 118,
+            "schemaChars": 1589,
+            "propertiesCount": 32
+          },
+          {
+            "name": "cron",
+            "summaryChars": 3726,
+            "schemaChars": 6700,
+            "propertiesCount": 13
+          },
+          {
+            "name": "message",
+            "summaryChars": 142,
+            "schemaChars": 6804,
+            "propertiesCount": 109
+          },
+          {
+            "name": "tts",
+            "summaryChars": 152,
+            "schemaChars": 223,
+            "propertiesCount": 2
+          },
+          {
+            "name": "gateway",
+            "summaryChars": 464,
+            "schemaChars": 497,
+            "propertiesCount": 12
+          },
+          {
+            "name": "agents_list",
+            "summaryChars": 118,
+            "schemaChars": 33,
+            "propertiesCount": 0
+          },
+          {
+            "name": "sessions_list",
+            "summaryChars": 177,
+            "schemaChars": 212,
+            "propertiesCount": 4
+          },
+          {
+            "name": "sessions_history",
+            "summaryChars": 180,
+            "schemaChars": 161,
+            "propertiesCount": 3
+          },
+          {
+            "name": "sessions_send",
+            "summaryChars": 208,
+            "schemaChars": 274,
+            "propertiesCount": 5
+          },
+          {
+            "name": "sessions_yield",
+            "summaryChars": 97,
+            "schemaChars": 60,
+            "propertiesCount": 1
+          },
+          {
+            "name": "sessions_spawn",
+            "summaryChars": 302,
+            "schemaChars": 1179,
+            "propertiesCount": 17
+          },
+          {
+            "name": "subagents",
+            "summaryChars": 105,
+            "schemaChars": 191,
+            "propertiesCount": 4
+          },
+          {
+            "name": "session_status",
+            "summaryChars": 336,
+            "schemaChars": 89,
+            "propertiesCount": 2
+          },
+          {
+            "name": "web_search",
+            "summaryChars": 123,
+            "schemaChars": 574,
+            "propertiesCount": 7
+          },
+          {
+            "name": "web_fetch",
+            "summaryChars": 129,
+            "schemaChars": 374,
+            "propertiesCount": 3
+          },
+          {
+            "name": "browser",
+            "summaryChars": 1066,
+            "schemaChars": 2799,
+            "propertiesCount": 48
+          },
+          {
+            "name": "memory_search",
+            "summaryChars": 334,
+            "schemaChars": 139,
+            "propertiesCount": 3
+          },
+          {
+            "name": "memory_get",
+            "summaryChars": 151,
+            "schemaChars": 128,
+            "propertiesCount": 3
+          }
+        ]
+      }
+    },
+    "contextTokens": 204800,
+    "inputTokens": 18476,
+    "outputTokens": 258,
+    "totalTokens": 18501,
+    "totalTokensFresh": true,
+    "cacheRead": 18368,
+    "cacheWrite": 0,
+    "estimatedCostUsd": 0,
+    "sessionFile": "/root/.openclaw/agents/main/sessions/cab780cd-1c1f-45b1-98c1-71e9dca58082.jsonl",
+    "status": "done",
+    "startedAt": 1775966712328,
+    "abortedLastRun": false,
+    "endedAt": 1775966716952,
+    "runtimeMs": 4624
   }
 }
