@@ -3586,22 +3586,6 @@
           "maxTokens": 32768
         },
         {
-          "id": "eleutherai/llemma_7b",
-          "name": "EleutherAI: Llemma 7b",
-          "reasoning": false,
-          "input": [
-            "text"
-          ],
-          "cost": {
-            "input": 0.7999999999999999,
-            "output": 1.2,
-            "cacheRead": 0,
-            "cacheWrite": 0
-          },
-          "contextWindow": 4096,
-          "maxTokens": 4096
-        },
-        {
           "id": "alfredpros/codellama-7b-instruct-solidity",
           "name": "AlfredPros: CodeLLaMa 7B Instruct Solidity",
           "reasoning": false,
@@ -4731,6 +4715,23 @@
           "maxTokens": 32768
         },
         {
+          "id": "meta-llama/llama-3.2-11b-vision-instruct",
+          "name": "Meta: Llama 3.2 11B Vision Instruct",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0.245,
+            "output": 0.245,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 131072,
+          "maxTokens": 16384
+        },
+        {
           "id": "meta-llama/llama-3.2-3b-instruct",
           "name": "Meta: Llama 3.2 3B Instruct",
           "reasoning": false,
@@ -4761,23 +4762,6 @@
           },
           "contextWindow": 60000,
           "maxTokens": 128000
-        },
-        {
-          "id": "meta-llama/llama-3.2-11b-vision-instruct",
-          "name": "Meta: Llama 3.2 11B Vision Instruct",
-          "reasoning": false,
-          "input": [
-            "text",
-            "image"
-          ],
-          "cost": {
-            "input": 0.245,
-            "output": 0.245,
-            "cacheRead": 0,
-            "cacheWrite": 0
-          },
-          "contextWindow": 131072,
-          "maxTokens": 16384
         },
         {
           "id": "qwen/qwen-2.5-72b-instruct",
