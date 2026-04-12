@@ -43,7 +43,7 @@
         },
         "provider": "none",
         "remote": {
-          "apiKey": "AIzaSyB2-QmeVouz3kLfji00m2DNLqlpFiTuTEE"
+          "apiKey": "AIzaSyA3q1PRpA3ACstoRq4tq5wAmNh7rqmT87E"
         },
         "fallback": "none",
         "model": "gemini-embedding-001",
@@ -209,7 +209,7 @@
         "enabled": true,
         "config": {
           "webSearch": {
-            "apiKey": "AIzaSyB2-QmeVouz3kLfji00m2DNLqlpFiTuTEE"
+            "apiKey": "AIzaSyA3q1PRpA3ACstoRq4tq5wAmNh7rqmT87E"
           }
         }
       },

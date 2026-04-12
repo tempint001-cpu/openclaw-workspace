@@ -148,7 +148,7 @@
       "description": "Daily afternoon jokes at 4pm IST",
       "enabled": true,
       "createdAtMs": 1774753813927,
-      "updatedAtMs": 1775989877571,
+      "updatedAtMs": 1776008528712,
       "schedule": {
         "kind": "cron",
         "expr": "0 16 * * *",
@@ -169,12 +169,12 @@
       },
       "state": {
         "nextRunAtMs": 1776076200000,
-        "lastRunAtMs": 1775989800006,
+        "lastRunAtMs": 1776008472362,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 77565,
+        "lastDurationMs": 56350,
         "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 3,
+        "consecutiveErrors": 4,
         "lastDelivered": false,
         "lastDeliveryError": "⚠️ ✉️ Message failed",
         "lastError": "⚠️ ✉️ Message failed"
@@ -252,7 +252,7 @@
       "name": "github-backup",
       "enabled": true,
       "createdAtMs": 1774980647416,
-      "updatedAtMs": 1775988107722,
+      "updatedAtMs": 1776009726491,
       "schedule": {
         "expr": "0 */1 * * *",
         "kind": "cron",
@@ -270,11 +270,11 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1775991680664,
-        "lastRunAtMs": 1775988080675,
+        "nextRunAtMs": 1776013280664,
+        "lastRunAtMs": 1776009680675,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 27047,
+        "lastDurationMs": 45816,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -369,41 +369,6 @@
         "lastRunStatus": "ok",
         "lastStatus": "ok",
         "lastDurationMs": 25096,
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "acdb7218-c2eb-439d-b557-e08df3671301",
-      "agentId": "main",
-      "sessionKey": "agent:main:telegram:direct:7924461837",
-      "name": "daily-war-update",
-      "enabled": true,
-      "createdAtMs": 1775534700835,
-      "updatedAtMs": 1775990315955,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 9 * * *",
-        "tz": "Asia/Kolkata"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "Generate daily global conflict update for Nemesis (Indian citizen):\n1. Focus **ONLY** on developments that directly impact India, Indian citizens, economy, travel, oil prices, or regional stability\n2. No generic war updates. No filler. Every point must explain: what happened, what this means for India, what to prepare for\n3. Structure:\n   - ✅ IMPACT ON INDIA\n   - ⚠️ PREPARE / MONITOR\n   - 🛢️ OIL / FUEL PRICES\n   - ✈️ TRAVEL STATUS\n   - 🔮 WHAT HAPPENS NEXT\n4. Keep it concise, practical, actionable. Only send to Nemesis DM. Never post this anywhere else.\n5. End with exactly one sentence summary of what normal people should do today."
-      },
-      "delivery": {
-        "mode": "none",
-        "channel": "telegram",
-        "to": "7924461837"
-      },
-      "state": {
-        "nextRunAtMs": 1776051000000,
-        "lastRunAtMs": 1775990278238,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 37717,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -602,7 +567,7 @@
       "name": "water-reminder",
       "enabled": true,
       "createdAtMs": 1775727456880,
-      "updatedAtMs": 1775989898179,
+      "updatedAtMs": 1776008472021,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 10-20 * *",
@@ -621,13 +586,13 @@
         "to": "-1003606834639"
       },
       "state": {
-        "nextRunAtMs": 1775997011694,
-        "lastRunAtMs": 1775989880049,
+        "nextRunAtMs": 1776012072021,
+        "lastRunAtMs": 1776008463034,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 18130,
+        "lastDurationMs": 8987,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 34,
+        "consecutiveErrors": 37,
         "lastError": "Channel is required when multiple channels are configured: telegram, streamchat Set delivery.channel explicitly or use a main session with a previous channel."
       }
     },
@@ -636,7 +601,7 @@
       "name": "hourly-memory-summary",
       "enabled": true,
       "createdAtMs": 1775983798745,
-      "updatedAtMs": 1775990089174,
+      "updatedAtMs": 1776008069053,
       "schedule": {
         "kind": "cron",
         "expr": "0 * * * *",
@@ -655,11 +620,11 @@
         "to": "-1003951451198"
       },
       "state": {
-        "nextRunAtMs": 1775993641389,
-        "lastRunAtMs": 1775990041395,
+        "nextRunAtMs": 1776011641389,
+        "lastRunAtMs": 1776008041395,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 47779,
+        "lastDurationMs": 27658,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -696,7 +661,7 @@
       "name": "hourly-memory-summary",
       "enabled": true,
       "createdAtMs": 1775986428815,
-      "updatedAtMs": 1775990278223,
+      "updatedAtMs": 1776008580581,
       "schedule": {
         "kind": "cron",
         "expr": "0 * * * *",
@@ -715,14 +680,15 @@
         "to": "-1003951451198"
       },
       "state": {
-        "nextRunAtMs": 1775993461107,
-        "lastRunAtMs": 1775990247016,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 31207,
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0
+        "nextRunAtMs": 1776011461107,
+        "lastRunAtMs": 1776008528726,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 51855,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 1,
+        "lastError": "⚠️ 📝 Edit: `in memory/2026-04-12.md` failed"
       }
     },
     {
@@ -730,7 +696,7 @@
       "name": "hourly-memory-summary",
       "enabled": true,
       "createdAtMs": 1775987304647,
-      "updatedAtMs": 1775989958696,
+      "updatedAtMs": 1776007915736,
       "schedule": {
         "kind": "cron",
         "expr": "0 * * * *",
@@ -749,13 +715,13 @@
         "to": "-1003951451198"
       },
       "state": {
-        "nextRunAtMs": 1775993465050,
-        "lastRunAtMs": 1775989930919,
+        "nextRunAtMs": 1776011465050,
+        "lastRunAtMs": 1776007884928,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 27777,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
+        "lastDurationMs": 30808,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
       }
     }

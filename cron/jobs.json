@@ -148,7 +148,7 @@
       "description": "Daily afternoon jokes at 4pm IST",
       "enabled": true,
       "createdAtMs": 1774753813927,
-      "updatedAtMs": 1775989877571,
+      "updatedAtMs": 1776008528712,
       "schedule": {
         "kind": "cron",
         "expr": "0 16 * * *",
@@ -169,12 +169,12 @@
       },
       "state": {
         "nextRunAtMs": 1776076200000,
-        "lastRunAtMs": 1775989800006,
+        "lastRunAtMs": 1776008472362,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 77565,
+        "lastDurationMs": 56350,
         "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 3,
+        "consecutiveErrors": 4,
         "lastDelivered": false,
         "lastDeliveryError": "⚠️ ✉️ Message failed",
         "lastError": "⚠️ ✉️ Message failed"
@@ -252,7 +252,7 @@
       "name": "github-backup",
       "enabled": true,
       "createdAtMs": 1774980647416,
-      "updatedAtMs": 1776002555690,
+      "updatedAtMs": 1776009726491,
       "schedule": {
         "expr": "0 */1 * * *",
         "kind": "cron",
@@ -270,15 +270,14 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1776006080664,
-        "lastRunAtMs": 1776002480671,
+        "nextRunAtMs": 1776013280664,
+        "lastRunAtMs": 1776009680675,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 75019,
+        "lastDurationMs": 45816,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": false,
-        "runningAtMs": 1776006080667
+        "lastDelivered": false
       }
     },
     {
@@ -568,7 +567,7 @@
       "name": "water-reminder",
       "enabled": true,
       "createdAtMs": 1775727456880,
-      "updatedAtMs": 1776004226009,
+      "updatedAtMs": 1776010223363,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 10-20 * *",
@@ -583,17 +582,17 @@
       },
       "delivery": {
         "mode": "announce",
-        "channel": "last",
+        "channel": "telegram",
         "to": "-1003606834639"
       },
       "state": {
-        "nextRunAtMs": 1776011411694,
-        "lastRunAtMs": 1776004211701,
+        "nextRunAtMs": 1776012072021,
+        "lastRunAtMs": 1776008463034,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 14308,
+        "lastDurationMs": 8987,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 36,
+        "consecutiveErrors": 37,
         "lastError": "Channel is required when multiple channels are configured: telegram, streamchat Set delivery.channel explicitly or use a main session with a previous channel."
       }
     },
@@ -602,7 +601,7 @@
       "name": "hourly-memory-summary",
       "enabled": true,
       "createdAtMs": 1775983798745,
-      "updatedAtMs": 1776004492506,
+      "updatedAtMs": 1776008069053,
       "schedule": {
         "kind": "cron",
         "expr": "0 * * * *",
@@ -621,11 +620,11 @@
         "to": "-1003951451198"
       },
       "state": {
-        "nextRunAtMs": 1776008041389,
-        "lastRunAtMs": 1776004441396,
+        "nextRunAtMs": 1776011641389,
+        "lastRunAtMs": 1776008041395,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 51110,
+        "lastDurationMs": 27658,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -662,7 +661,7 @@
       "name": "hourly-memory-summary",
       "enabled": true,
       "createdAtMs": 1775986428815,
-      "updatedAtMs": 1776004302262,
+      "updatedAtMs": 1776008580581,
       "schedule": {
         "kind": "cron",
         "expr": "0 * * * *",
@@ -681,14 +680,14 @@
         "to": "-1003951451198"
       },
       "state": {
-        "nextRunAtMs": 1776007861107,
-        "lastRunAtMs": 1776004261116,
+        "nextRunAtMs": 1776011461107,
+        "lastRunAtMs": 1776008528726,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 41146,
+        "lastDurationMs": 51855,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 2,
+        "consecutiveErrors": 1,
         "lastError": "⚠️ 📝 Edit: `in memory/2026-04-12.md` failed"
       }
     },
@@ -697,7 +696,7 @@
       "name": "hourly-memory-summary",
       "enabled": true,
       "createdAtMs": 1775987304647,
-      "updatedAtMs": 1776004348481,
+      "updatedAtMs": 1776007915736,
       "schedule": {
         "kind": "cron",
         "expr": "0 * * * *",
@@ -716,15 +715,14 @@
         "to": "-1003951451198"
       },
       "state": {
-        "nextRunAtMs": 1776007865050,
-        "lastRunAtMs": 1776004304424,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 44057,
-        "lastDelivered": true,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 1,
-        "lastError": "⚠️ 📝 Edit: `in ~/.openclaw/workspace/memory/2026-04-12.md` failed"
+        "nextRunAtMs": 1776011465050,
+        "lastRunAtMs": 1776007884928,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 30808,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0
       }
     }
   ]
