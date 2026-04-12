@@ -43,7 +43,7 @@ add_oc_cron "hourly-memory-summary" "0 * * * *" "$MONITOR_GROUP" \
 5. Append this summary cleanly to today's daily memory file
 6. No notifications required. Run silently."
 
-add_oc_cron "nightly-memory-review" "0 3 * * *" "$NEMESIS_DM" \
+add_oc_cron "nightly-memory-review" "10 3 * * *" "$NEMESIS_DM" \
 "Run the nightly memory distillation process:
 1. First read today's full daily memory file: memory/YYYY-MM-DD.md
 2. Read the full MEMORY.md file
@@ -54,32 +54,32 @@ add_oc_cron "nightly-memory-review" "0 3 * * *" "$NEMESIS_DM" \
 7. Update MEMORY.md cleanly
 8. Send a short summary to Nemesis DM with how many items were added"
 
-add_oc_cron "good-morning-dm" "0 7 * * *" "$NEMESIS_DM" \
+add_oc_cron "good-morning-dm" "10 7 * * *" "$NEMESIS_DM" \
 "It's morning in India (IST). Search for: 1) A daily motivational quote, 2) Any interesting news from last night, 3) A positive affirmation. Send a warm, personal good morning message to Nemesis. Keep it brief, heartfelt, end with an emoji."
 
 add_oc_cron "ai-news-digest" "30 7 * * *" "$NEMESIS_DM" \
 "Search for today's top AI and tech news. Create a concise digest with: 1) 3-5 key headlines, 2) One sentence summary each, 3) Most interesting story highlighted. Format as a clean list."
 
-add_oc_cron "good-morning-group" "0 8 * * *" "$MAIN_GROUP" \
+add_oc_cron "good-morning-group" "10 8 * * *" "$MAIN_GROUP" \
 "Search for a trending topic or interesting fact from today. Post a good morning message to the group with: 1) Warm greeting, 2) One interesting thing happening today, 3) An engaging question for the group. Keep it natural."
 
-add_oc_cron "daily-war-update" "0 9 * * *" "$NEMESIS_DM" \
+add_oc_cron "daily-war-update" "10 9 * * *" "$NEMESIS_DM" \
 "Provide a comprehensive global war and conflict update for Nemesis with:
 - Historical Context (~100 words): Overview of major ongoing global conflicts, focus on Iran-US situation, other significant conflicts worldwide, brief context on how situations evolved
 - Last 24 Hours Developments: Key events, specific updates on Iran-US tensions, other conflict zone updates, diplomatic initiatives
 - India-Specific Implications: How conflicts affect India's interests, predictions for future impact, India's potential role
 Cross-verify information using multiple sources (web search). Be concise but comprehensive. If uncertain, state the uncertainty rather than guessing. Send result to Nemesis via Telegram."
 
-add_oc_cron "word-of-the-day" "0 10 * * *" "$MAIN_GROUP" \
+add_oc_cron "word-of-the-day" "10 10 * * *" "$MAIN_GROUP" \
 "Read memory/wotd-history.json and check the 'used' array. Search for an interesting, obscure English word (not commonly known) that is NOT in the used list. Get its definition, pronunciation (IPA), and a meaningful quote. After selecting, UPDATE memory/wotd-history.json by adding this word to the 'used' array. Format: 📚 Word of the Day: **Word** - Definition - Pronounced: /ipa/ - > \"quote\""
 
-add_oc_cron "feminine-tip-daily" "0 15 * * *" "$SRAVYA_DM" \
+add_oc_cron "feminine-tip-daily" "10 15 * * *" "$SRAVYA_DM" \
 "Read memory/tips-history.json and check the 'used' array. Search for a fresh, practical self-care or wellness tip for women that is NOT in the used list. Topics to rotate: Skincare, Mental health, Fitness, Nutrition, Work-life balance, Fashion. After selecting, UPDATE memory/tips-history.json by adding this tip to the 'used' array."
 
-add_oc_cron "afternoon-jokes" "0 16 * * *" "$MAIN_GROUP" \
+add_oc_cron "afternoon-jokes" "10 16 * * *" "$MAIN_GROUP" \
 "Read memory/jokes-history.json and check the 'used' array. Search for 2-3 fresh, clean, funny jokes that are NOT in the used list. Include one tech joke, one general joke, one pun. After selecting, UPDATE memory/jokes-history.json by adding these jokes to the 'used' array."
 
-add_oc_cron "goodnight-story" "0 22 * * *" "$NEMESIS_DM" \
+add_oc_cron "goodnight-story" "10 22 * * *" "$NEMESIS_DM" \
 "Read memory/stories-history.json and check the 'used' array. Search for a short bedtime story (under 300 words) that is NOT in the used list. Topics to rotate: Indian mythology folktale, Motivational story, Nature story, Historical anecdote. After selecting, UPDATE memory/stories-history.json by adding this story topic to the 'used' array."
 
 echo "✅ OpenClaw AI Jobs Registered."
@@ -103,10 +103,11 @@ add_to_crontab() {
     fi
 }
 
-add_to_crontab "1 * * * *" "bash ${SCRIPT_DIR}/git_backup.sh"
-add_to_crontab "5 * * * *" "${PYTHON_BIN} ${SCRIPT_DIR}/heartbeat_health_cron.py"
-add_to_crontab "0 4 * * *" "${PYTHON_BIN} ${SCRIPT_DIR}/memory_archive.py"
-add_to_crontab "0 6 * * *" "bash ${SCRIPT_DIR}/new_session_daily.sh"
+add_to_crontab "* * * * *" "${PYTHON_BIN} ${SCRIPT_DIR}/update_time.py"
+add_to_crontab "15 * * * *" "bash ${SCRIPT_DIR}/git_backup.sh"
+add_to_crontab "20 * * * *" "${PYTHON_BIN} ${SCRIPT_DIR}/heartbeat_health_cron.py"
+add_to_crontab "30 4 * * *" "${PYTHON_BIN} ${SCRIPT_DIR}/memory_archive.py"
+add_to_crontab "30 6 * * *" "bash ${SCRIPT_DIR}/new_session_daily.sh"
 
 crontab "$CRON_FILE"
 rm -f "$CRON_FILE"

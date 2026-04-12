@@ -39,4 +39,23 @@ All background tasks, scheduled messages, and system jobs are managed natively b
 ✅ Initialization: Run `bash scripts/bootstrap_automation.sh` once to register all tasks.
 ✅ View Jobs: Use `openclaw cron list` or `crontab -l`.
 ✅ Job Architecture: AI-driven tasks run via OpenClaw isolated cron. Simple utility scripts (like git auto-commit or memory archival) run via Linux system cron.
+
+### Current Schedule (IST):
+**Never guess the schedule. Always refer to this table.**
+| Time | Job | Type |
+|------|-----|------|
+| 03:10 | nightly-memory-review | OpenClaw AI Job |
+| 04:30 | memory-archive | System Cron |
+| 06:30 | daily-session-reset | System Cron |
+| 07:10 | good-morning-dm | OpenClaw AI Job |
+| 07:30 | ai-news-digest | OpenClaw AI Job |
+| 08:10 | good-morning-group | OpenClaw AI Job |
+| 09:10 | daily-war-update | OpenClaw AI Job |
+| 10:10 | word-of-the-day | OpenClaw AI Job |
+| 15:10 | feminine-tip-daily | OpenClaw AI Job |
+| 16:10 | afternoon-jokes | OpenClaw AI Job |
+| 22:10 | goodnight-story | OpenClaw AI Job |
+| hourly at :00 | hourly-memory-summary | OpenClaw AI Job |
+| hourly at :15 | git-auto-commit | System Cron |
+| hourly at :20 | heartbeat-health-check | System Cron |
 <!-- END:scheduler -->
