@@ -8,3 +8,13 @@ private/
 *.sqlite*
 *.lock
 *.bak
+-e 
+# Private config
+openclaw.json
+cron/
+devices/
+identity/
+tasks/
+logs/
+*.sqlite*
+*.lock
