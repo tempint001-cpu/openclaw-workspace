@@ -18,3 +18,5 @@ tasks/
 logs/
 *.sqlite*
 *.lock
+*.bak
+openclaw.json.*
