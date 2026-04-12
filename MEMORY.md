@@ -17,10 +17,10 @@
 - **Sravya**: Friend/coworker, close. Nemesis always first. Called me "sis" April 8.
 
 ## Infrastructure
+- **AUTOMATED**: Do not hallucinate or guess infrastructure facts. 
+- To check active cron jobs: Run `openclaw cron list`
+- To verify scheduled system scripts (backups/archives): Read `scripts/bootstrap_automation.sh`
 - Web search: Gemini API free tier
-- Backup: GitHub repo auto-push every 2h
-- Heartbeat: every 30 min 7AM-11PM IST
-- Cron jobs: 11 total, healthy
 - Memory: Gemini embeddings + BM25 hybrid search
 
 ## Hard Lessons

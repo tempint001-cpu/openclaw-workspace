@@ -2,40 +2,34 @@
 
 ## Project Overview
 
-This repository serves as the core workspace, configuration, and scripting environment for an AI executive assistant named **KiloClaw** (also referred to as **Nexa**). It appears to be built on top of an agent framework (like OpenClaw) and uses a combination of Markdown files for system prompting/context management, and Python/Shell scripts for background task automation (cron, heartbeats, backups).
+This repository serves as the core workspace, configuration, and scripting environment for an AI executive assistant named **KiloClaw** (also referred to as **Nexa**). It is built on the **OpenClaw** framework and uses a combination of Markdown files for system prompting/context management, and Shell/Python scripts for background task automation.
 
 The agent's primary purpose is to be a helpful, proactive assistant to its human user ("Nemesis"), maintaining continuity across sessions through a structured file-based memory architecture.
 
 **Main Technologies:**
 *   **Markdown:** Used extensively for defining agent identity, behavioral rules, system prompts, and memory logs.
-*   **Python 3:** Used for scheduling and background tasks (`scheduler.py`, `heartbeat_health_cron.py`).
-*   **Shell Scripting:** Used for orchestration and backups (`run_scheduler_loop.sh`, `git_backup.sh`).
-*   **JSON:** Used for tracking state (e.g., `heartbeat-state.json`, `.sync_state.json`).
+*   **Shell Scripting:** Used for orchestration and backups (`git_backup.sh`, `new_session_daily.sh`, `bootstrap_automation.sh`).
+*   **Python 3:** Used for health monitoring and archiving (`heartbeat_health_cron.py`, `memory_archive.py`).
+*   **JSON:** Used for tracking state (`heartbeat-state.json`, history trackers).
 
 **Architecture:**
 *   **Core Configuration:** Files like `IDENTITY.md`, `SOUL.md`, `USER.md`, `AGENTS.md`, and `GROUP.md` define the agent's persona, rules of engagement, and context.
 *   **Memory System:** 
     *   **Long-term Memory:** `MEMORY.md` serves as the curated, long-term memory for the main session.
     *   **Short-term/Daily Memory:** The `memory/` directory contains daily logs (`YYYY-MM-DD.md`) and state files.
-*   **Automation (Scripts):** The `scripts/` directory contains logic for a custom cron/scheduler loop, heartbeat health checks, and data archiving.
-*   **Capabilities (Skills):** The `skills/` directory holds custom tool integrations (e.g., `browser-download`, `session-cleanup`).
+*   **Automation:** All background AI jobs are handled by **OpenClaw's Native Cron**. Utility scripts are registered natively to the host's Linux `crontab`.
 
 ## Building and Running
 
-The system does not require a traditional "build" step. It operates by continuously running background scripts and reading context files.
+The system does not require a traditional "build" step. It operates autonomously via OpenClaw and crontab after a one-time bootstrap.
 
-**Key Commands (Inferred):**
+**Key Initialization Command:**
 
-*   **Start the Scheduler Loop:**
+*   **Register All Automation:**
     ```bash
-    ./scripts/run_scheduler_loop.sh
+    bash scripts/bootstrap_automation.sh
     ```
-    This script runs `scripts/scheduler.py` every 60 seconds, which in turn manages cron jobs and heartbeats, logging output to `logs/scheduler.log`.
-
-*   **Manual Backup:**
-    ```bash
-    ./scripts/git_backup.sh
-    ```
+    This script registers all 10 AI background jobs to `openclaw cron add` and appends all utility scripts to `crontab`. After running this once, the system manages itself infinitely.
 
 ## Development Conventions and Agent Rules
 

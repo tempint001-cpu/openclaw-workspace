@@ -1,6 +1,6 @@
 # Heartbeat Checklist
 
-- **Time check first:** Run `python3 ./scripts/clock.py` to get current IST time. No external calls, no internet, no tokens burned.
+- **Time check first:** Native system time check (IST). No external calls, no internet.
 - **Inactive hours:** Skip all checks between 11 PM – 7 AM IST. Only update heartbeat state and exit silently. No group messages, no pings, no supervision during this window.
 - **Pending tasks:** If Nemesis mentioned a pending task in recent chats, check if there's anything to follow up on (skip if inactive hours).
 - **Group vibes:** Check if it's been 3+ hours since the last group message (-1003606834639). Skip entirely after 11 PM IST.
