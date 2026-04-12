@@ -5,3 +5,11 @@ config.json
 tokens
 .env
 private/
+-e agents/
+cron/
+telegram/
+*.sqlite*
+*.lock
+*.deleted.*
+*.bak
+
