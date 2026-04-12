@@ -148,7 +148,7 @@
       "description": "Daily afternoon jokes at 4pm IST",
       "enabled": true,
       "createdAtMs": 1774753813927,
-      "updatedAtMs": 1775903442623,
+      "updatedAtMs": 1775989877571,
       "schedule": {
         "kind": "cron",
         "expr": "0 16 * * *",
@@ -168,13 +168,13 @@
         "to": "-1003606834639"
       },
       "state": {
-        "nextRunAtMs": 1775989800000,
-        "lastRunAtMs": 1775903400005,
+        "nextRunAtMs": 1776076200000,
+        "lastRunAtMs": 1775989800006,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 42618,
+        "lastDurationMs": 77565,
         "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 2,
+        "consecutiveErrors": 3,
         "lastDelivered": false,
         "lastDeliveryError": "⚠️ ✉️ Message failed",
         "lastError": "⚠️ ✉️ Message failed"
@@ -252,7 +252,7 @@
       "name": "github-backup",
       "enabled": true,
       "createdAtMs": 1774980647416,
-      "updatedAtMs": 1775984495876,
+      "updatedAtMs": 1775988107722,
       "schedule": {
         "expr": "0 */1 * * *",
         "kind": "cron",
@@ -270,11 +270,11 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1775988080664,
-        "lastRunAtMs": 1775984480669,
+        "nextRunAtMs": 1775991680664,
+        "lastRunAtMs": 1775988080675,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 15207,
+        "lastDurationMs": 27047,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -381,7 +381,7 @@
       "name": "daily-war-update",
       "enabled": true,
       "createdAtMs": 1775534700835,
-      "updatedAtMs": 1775964655013,
+      "updatedAtMs": 1775990315955,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * *",
@@ -400,10 +400,10 @@
       },
       "state": {
         "nextRunAtMs": 1776051000000,
-        "lastRunAtMs": 1775964600006,
+        "lastRunAtMs": 1775990278238,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 55007,
+        "lastDurationMs": 37717,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -602,7 +602,7 @@
       "name": "water-reminder",
       "enabled": true,
       "createdAtMs": 1775727456880,
-      "updatedAtMs": 1775982624922,
+      "updatedAtMs": 1775989898179,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 10-20 * *",
@@ -621,13 +621,13 @@
         "to": "-1003606834639"
       },
       "state": {
-        "nextRunAtMs": 1775989811694,
-        "lastRunAtMs": 1775982611700,
+        "nextRunAtMs": 1775997011694,
+        "lastRunAtMs": 1775989880049,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 13222,
+        "lastDurationMs": 18130,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 33,
+        "consecutiveErrors": 34,
         "lastError": "Channel is required when multiple channels are configured: telegram, streamchat Set delivery.channel explicitly or use a main session with a previous channel."
       }
     },
@@ -636,7 +636,7 @@
       "name": "hourly-memory-summary",
       "enabled": true,
       "createdAtMs": 1775983798745,
-      "updatedAtMs": 1775986521952,
+      "updatedAtMs": 1775990089174,
       "schedule": {
         "kind": "cron",
         "expr": "0 * * * *",
@@ -655,11 +655,11 @@
         "to": "-1003951451198"
       },
       "state": {
-        "nextRunAtMs": 1775990041389,
-        "lastRunAtMs": 1775986451035,
+        "nextRunAtMs": 1775993641389,
+        "lastRunAtMs": 1775990041395,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 70917,
+        "lastDurationMs": 47779,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -696,7 +696,7 @@
       "name": "hourly-memory-summary",
       "enabled": true,
       "createdAtMs": 1775986428815,
-      "updatedAtMs": 1775986428815,
+      "updatedAtMs": 1775990278223,
       "schedule": {
         "kind": "cron",
         "expr": "0 * * * *",
@@ -715,7 +715,48 @@
         "to": "-1003951451198"
       },
       "state": {
-        "nextRunAtMs": 1775989861107
+        "nextRunAtMs": 1775993461107,
+        "lastRunAtMs": 1775990247016,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 31207,
+        "lastDelivered": false,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0
+      }
+    },
+    {
+      "id": "65d990d6-7b48-4b94-9d14-f5f2439f79df",
+      "name": "hourly-memory-summary",
+      "enabled": true,
+      "createdAtMs": 1775987304647,
+      "updatedAtMs": 1775989958696,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 * * * *",
+        "tz": "Asia/Kolkata",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Hourly memory summary job:\n1. Get all chat messages from last 60 minutes: both this DM and the main group\n2. Extract: Hard facts, decisions, requests, bugs, changes, agreements, Mood, tone, emotional state, vibe, frustrations, satisfaction, Unspoken context, things implied between lines, Preferences, likes, dislikes that were shown not stated, Trust signals, jokes that landed, things that annoyed\n3. Do NOT discard banter and casual talk - this is where most of the context lives.\n4. Summarize cleanly, separate Facts section and Context / Tone section\n5. Append this summary cleanly to today's daily memory file\n6. No notifications required. Run silently."
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "telegram",
+        "to": "-1003951451198"
+      },
+      "state": {
+        "nextRunAtMs": 1775993465050,
+        "lastRunAtMs": 1775989930919,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 27777,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0
       }
     }
   ]
