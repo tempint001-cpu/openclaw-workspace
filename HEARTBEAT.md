@@ -1,4 +1,3 @@
-> CURRENT IST TIME: 2026-04-12 03:02 PM IST
 # Heartbeat Checklist
 
 - **Time check first:** Native system time check (IST). No external calls, no internet.

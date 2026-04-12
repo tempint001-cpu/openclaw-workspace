@@ -41,7 +41,9 @@ All background tasks, scheduled messages, and system jobs are managed natively b
 ✅ Job Architecture: AI-driven tasks run via OpenClaw isolated cron. Simple utility scripts (like git auto-commit or memory archival) run via Linux system cron.
 
 ### Current Schedule (IST):
-**Never guess the schedule. Always refer to this table.**
+**Time Awareness Directive:** To know the current time, ALWAYS look at the timestamp prepended to Nemesis's latest message in the chat log (e.g., `[4/12/2026 3:04 PM]`). Do NOT run tools to get the time. 
+**Schedule Directive:** When asked about upcoming jobs, reference this table, compare it to the current time from the chat log, and calculate how many minutes remain until the job triggers.
+
 | Time | Job | Type |
 |------|-----|------|
 | 03:10 | nightly-memory-review | OpenClaw AI Job |

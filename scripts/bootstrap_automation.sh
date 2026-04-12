@@ -103,7 +103,6 @@ add_to_crontab() {
     fi
 }
 
-add_to_crontab "* * * * *" "${PYTHON_BIN} ${SCRIPT_DIR}/update_time.py"
 add_to_crontab "15 * * * *" "bash ${SCRIPT_DIR}/git_backup.sh"
 add_to_crontab "20 * * * *" "${PYTHON_BIN} ${SCRIPT_DIR}/heartbeat_health_cron.py"
 add_to_crontab "30 4 * * *" "${PYTHON_BIN} ${SCRIPT_DIR}/memory_archive.py"
