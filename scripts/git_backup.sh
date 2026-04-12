@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /root/.openclaw/workspace
+cd "$(dirname "$0")/.."
 
 git add MEMORY.md GROUP.md AGENTS.md SOUL.md USER.md HEARTBEAT.md TOOLS.md memory/*.md
 

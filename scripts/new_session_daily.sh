@@ -6,7 +6,7 @@ cd "$SCRIPT_DIR"
 MONITOR_GROUP="-1003951451198"
 
 notify() {
-    openclaw message send --channel telegram --target "${MONITOR_GROUP}" --message "[$(date +'%H:%M IST')] $1"
+    openclaw message send --channel telegram --to "${MONITOR_GROUP}" --message "[$(date +'%H:%M IST')] $1"
 }
 
 notify "🔄 Starting daily session reset..."

@@ -3,7 +3,6 @@
 # Run this to verify heartbeat is updating state properly
 
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-SKILL_DIR="$BASE_DIR/skills/heartbeat-state-manager"
 
 echo "=========================================="
 echo "HEARTBEAT STATE VERIFICATION"
@@ -22,13 +21,14 @@ echo "✓ State file exists: $STATE_FILE"
 echo ""
 
 # Check if health check script exists
-if [ -f "$SKILL_DIR/scripts/health_check.py" ]; then
+HEALTH_SCRIPT="$BASE_DIR/scripts/heartbeat_health_cron.py"
+if [ -f "$HEALTH_SCRIPT" ]; then
     echo "Running health check..."
     echo ""
-    python3 "$SKILL_DIR/scripts/health_check.py"
+    python3 "$HEALTH_SCRIPT" --dry-run
     exit $?
 else
-    echo "✗ Health check script not found"
+    echo "✗ Health check script not found at $HEALTH_SCRIPT"
     echo ""
     echo "Current state:"
     cat "$STATE_FILE"

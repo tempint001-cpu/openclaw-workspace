@@ -27,10 +27,6 @@ NEMESIS_ID = "7924461837"
 
 THRESHOLDS = {
     "heartbeat_run": {"warning": 45, "critical": 60},
-    "group_message": {"warning": 240, "critical": 360},
-    "nemesis_ping": {"warning": 360, "critical": 480},
-    "git_push": {"warning": 180, "critical": 360},
-    "memory_review": {"warning": 1560, "critical": 1800},
 }
 
 ACTIVE_HOURS = {"start": 7, "end": 23}
@@ -38,7 +34,7 @@ ACTIVE_HOURS = {"start": 7, "end": 23}
 
 def load_state():
     if not STATE_FILE.exists():
-        return {"lastChecks": {}}
+        return {}
     with open(STATE_FILE, "r") as f:
         return json.load(f)
 
@@ -65,30 +61,27 @@ def is_active_hours():
 
 def check_health():
     state = load_state()
-    last_checks = state.get("lastChecks", {})
+    last_heartbeat = state.get("last_heartbeat")
 
     critical = []
     warnings = []
     active = is_active_hours()
 
-    for field, thresholds in THRESHOLDS.items():
-        value = last_checks.get(field)
-        minutes = minutes_ago(value)
+    thresholds = THRESHOLDS["heartbeat_run"]
+    minutes = minutes_ago(last_heartbeat)
 
-        if minutes is None:
-            if field == "heartbeat_run" and not active:
-                continue
-            critical.append(f"{field}: Never run")
-        elif minutes >= thresholds["critical"]:
-            if field == "heartbeat_run" and not active:
-                continue
+    if minutes is None:
+        if active:
+            critical.append("heartbeat_run: Never run")
+    elif minutes >= thresholds["critical"]:
+        if active:
             critical.append(
-                f"{field}: CRITICAL - {round(minutes)} min since last run (threshold: {thresholds['critical']} min)"
+                f"heartbeat_run: CRITICAL - {round(minutes)} min since last run (threshold: {thresholds['critical']} min)"
             )
-        elif minutes >= thresholds["warning"]:
-            warnings.append(
-                f"{field}: WARNING - {round(minutes)} min since last run (threshold: {thresholds['warning']} min)"
-            )
+    elif minutes >= thresholds["warning"]:
+        warnings.append(
+            f"heartbeat_run: WARNING - {round(minutes)} min since last run (threshold: {thresholds['warning']} min)"
+        )
 
     return critical, warnings
 
@@ -97,8 +90,7 @@ def keepalive_state():
     """Update heartbeat_run state during inactive hours to prevent stale alerts."""
     state = load_state()
     now = datetime.now(timezone.utc).isoformat()
-    state.setdefault("lastChecks", {})
-    state["lastChecks"]["heartbeat_run"] = now
+    state["last_heartbeat"] = now
 
     STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
     with open(STATE_FILE, "w") as f:
