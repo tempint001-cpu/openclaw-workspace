@@ -11,7 +11,6 @@ import traceback
 from typing import Any, Callable, Dict, Optional, Tuple
 
 SCHEDULE = [
-    ("*", "clock-tick"),
     ("00", "hourly-memory-summary"),
     ("06:00", "daily-session-reset"),
     ("07:00", "good-morning-dm"),
@@ -309,10 +308,7 @@ def execute_job(job_name: str) -> None:
         return "FAILED", err
 
     try:
-        if job_name == "clock-tick":
-            # No work, but still notify so the run is visible.
-            details = "clock tick processed"
-            return
+
 
         if job_name == "git-auto-commit":
             # Try once, then retry once on timeout.
