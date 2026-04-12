@@ -252,7 +252,7 @@
       "name": "github-backup",
       "enabled": true,
       "createdAtMs": 1774980647416,
-      "updatedAtMs": 1775995303963,
+      "updatedAtMs": 1775998900457,
       "schedule": {
         "expr": "0 */1 * * *",
         "kind": "cron",
@@ -270,15 +270,15 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1775998880664,
-        "lastRunAtMs": 1775995280671,
+        "nextRunAtMs": 1776002480664,
+        "lastRunAtMs": 1775998880670,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 23292,
+        "lastDurationMs": 19787,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1775998880666
+        "runningAtMs": 1776002480666
       }
     },
     {
@@ -602,7 +602,7 @@
       "name": "hourly-memory-summary",
       "enabled": true,
       "createdAtMs": 1775983798745,
-      "updatedAtMs": 1775997288136,
+      "updatedAtMs": 1776000895850,
       "schedule": {
         "kind": "cron",
         "expr": "0 * * * *",
@@ -621,11 +621,11 @@
         "to": "-1003951451198"
       },
       "state": {
-        "nextRunAtMs": 1776000841389,
-        "lastRunAtMs": 1775997241397,
+        "nextRunAtMs": 1776004441389,
+        "lastRunAtMs": 1776000841397,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 46739,
+        "lastDurationMs": 54453,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -662,7 +662,7 @@
       "name": "hourly-memory-summary",
       "enabled": true,
       "createdAtMs": 1775986428815,
-      "updatedAtMs": 1775997107059,
+      "updatedAtMs": 1776000714412,
       "schedule": {
         "kind": "cron",
         "expr": "0 * * * *",
@@ -681,14 +681,15 @@
         "to": "-1003951451198"
       },
       "state": {
-        "nextRunAtMs": 1776000661107,
-        "lastRunAtMs": 1775997061113,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 45946,
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0
+        "nextRunAtMs": 1776004261107,
+        "lastRunAtMs": 1776000661116,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 53296,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 1,
+        "lastError": "⚠️ 📝 Edit: `in ~/.openclaw/workspace/memory/2026-04-12.md` failed"
       }
     },
     {
@@ -696,7 +697,7 @@
       "name": "hourly-memory-summary",
       "enabled": true,
       "createdAtMs": 1775987304647,
-      "updatedAtMs": 1775997139640,
+      "updatedAtMs": 1776000754348,
       "schedule": {
         "kind": "cron",
         "expr": "0 * * * *",
@@ -715,11 +716,11 @@
         "to": "-1003951451198"
       },
       "state": {
-        "nextRunAtMs": 1776000665050,
-        "lastRunAtMs": 1775997109072,
+        "nextRunAtMs": 1776004265050,
+        "lastRunAtMs": 1776000716454,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 30568,
+        "lastDurationMs": 37894,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
