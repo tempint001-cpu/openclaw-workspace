@@ -252,7 +252,7 @@
       "name": "github-backup",
       "enabled": true,
       "createdAtMs": 1774980647416,
-      "updatedAtMs": 1775998900457,
+      "updatedAtMs": 1776002555690,
       "schedule": {
         "expr": "0 */1 * * *",
         "kind": "cron",
@@ -270,15 +270,15 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1776002480664,
-        "lastRunAtMs": 1775998880670,
+        "nextRunAtMs": 1776006080664,
+        "lastRunAtMs": 1776002480671,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 19787,
+        "lastDurationMs": 75019,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1776002480666
+        "runningAtMs": 1776006080667
       }
     },
     {
@@ -568,7 +568,7 @@
       "name": "water-reminder",
       "enabled": true,
       "createdAtMs": 1775727456880,
-      "updatedAtMs": 1775997028237,
+      "updatedAtMs": 1776004226009,
       "schedule": {
         "kind": "cron",
         "expr": "0 */2 10-20 * *",
@@ -587,13 +587,13 @@
         "to": "-1003606834639"
       },
       "state": {
-        "nextRunAtMs": 1776004211694,
-        "lastRunAtMs": 1775997011701,
+        "nextRunAtMs": 1776011411694,
+        "lastRunAtMs": 1776004211701,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 16536,
+        "lastDurationMs": 14308,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 35,
+        "consecutiveErrors": 36,
         "lastError": "Channel is required when multiple channels are configured: telegram, streamchat Set delivery.channel explicitly or use a main session with a previous channel."
       }
     },
@@ -602,7 +602,7 @@
       "name": "hourly-memory-summary",
       "enabled": true,
       "createdAtMs": 1775983798745,
-      "updatedAtMs": 1776000895850,
+      "updatedAtMs": 1776004492506,
       "schedule": {
         "kind": "cron",
         "expr": "0 * * * *",
@@ -621,11 +621,11 @@
         "to": "-1003951451198"
       },
       "state": {
-        "nextRunAtMs": 1776004441389,
-        "lastRunAtMs": 1776000841397,
+        "nextRunAtMs": 1776008041389,
+        "lastRunAtMs": 1776004441396,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 54453,
+        "lastDurationMs": 51110,
         "lastDelivered": false,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0
@@ -662,7 +662,7 @@
       "name": "hourly-memory-summary",
       "enabled": true,
       "createdAtMs": 1775986428815,
-      "updatedAtMs": 1776000714412,
+      "updatedAtMs": 1776004302262,
       "schedule": {
         "kind": "cron",
         "expr": "0 * * * *",
@@ -681,15 +681,15 @@
         "to": "-1003951451198"
       },
       "state": {
-        "nextRunAtMs": 1776004261107,
-        "lastRunAtMs": 1776000661116,
+        "nextRunAtMs": 1776007861107,
+        "lastRunAtMs": 1776004261116,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 53296,
+        "lastDurationMs": 41146,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 1,
-        "lastError": "⚠️ 📝 Edit: `in ~/.openclaw/workspace/memory/2026-04-12.md` failed"
+        "consecutiveErrors": 2,
+        "lastError": "⚠️ 📝 Edit: `in memory/2026-04-12.md` failed"
       }
     },
     {
@@ -697,7 +697,7 @@
       "name": "hourly-memory-summary",
       "enabled": true,
       "createdAtMs": 1775987304647,
-      "updatedAtMs": 1776000754348,
+      "updatedAtMs": 1776004348481,
       "schedule": {
         "kind": "cron",
         "expr": "0 * * * *",
@@ -716,14 +716,15 @@
         "to": "-1003951451198"
       },
       "state": {
-        "nextRunAtMs": 1776004265050,
-        "lastRunAtMs": 1776000716454,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 37894,
-        "lastDelivered": false,
-        "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0
+        "nextRunAtMs": 1776007865050,
+        "lastRunAtMs": 1776004304424,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 44057,
+        "lastDelivered": true,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 1,
+        "lastError": "⚠️ 📝 Edit: `in ~/.openclaw/workspace/memory/2026-04-12.md` failed"
       }
     }
   ]
