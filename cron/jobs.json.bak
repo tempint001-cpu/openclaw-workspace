@@ -219,7 +219,7 @@
       "name": "goodnight-story",
       "enabled": true,
       "createdAtMs": 1774971606687,
-      "updatedAtMs": 1776011429213,
+      "updatedAtMs": 1776016450235,
       "schedule": {
         "kind": "cron",
         "expr": "0 22 * * *",
@@ -229,7 +229,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "FIRST: Read /root/.openclaw/workspace/CRON-CONTEXT.md for context. Send a bedtime story to group via message(action=send, channel=telegram, target=-1003606834639). Story: real historical event or powerful life lesson, 8-12 lines, simple language, something people genuinely love. End with goodnight wish. Search the web for a compelling true story if needed. If fails, message Nemesis at target=7924461837.",
+        "message": "You are a master Indian storyteller, a modern-day rishi who weaves ancient wisdom into living tales. Create one original or faithfully adapted short story rooted deeply in Indian philosophy (Upanishads, Puranas, Mahabharata, Ramayana, Jain or Buddhist parables, or timeless folk wisdom).\n\nThe story must be profoundly philosophical, emotionally moving, and filled with symbolism. Explore one powerful theme such as: illusion of Maya, impermanence, self-realization (atma-jnana), detachment vs attachment, true nature of happiness, karma and dharma, unity of all beings, or the futility of ego.\n\nStructure:\n- Give it a beautiful, evocative title.\n- Open with a vivid scene set in timeless India.\n- Build living, relatable characters with natural yet poetic dialogue.\n- Weave philosophy naturally through events and quiet revelations — never preach.\n- End with a powerful, soul-stirring climax and resolution.\n\nOutput only the clean story text, ready to post directly into the Telegram group. 650–900 words. No headers, no extra formatting, no audio mentions. Write in elegant, flowing English that carries the fragrance of Indian wisdom — meditative, gripping, and deeply moving. Make every reader pause, reflect, and feel transformed.\n\nAfter you finish writing the story, send it to the group using message(action=send, channel=telegram, target=-1003606834639). Exit silently.",
         "model": "kilocode/kilo-auto/free"
       },
       "delivery": {
@@ -252,7 +252,7 @@
       "name": "github-backup",
       "enabled": true,
       "createdAtMs": 1774980647416,
-      "updatedAtMs": 1776013301971,
+      "updatedAtMs": 1776020489678,
       "schedule": {
         "expr": "0 */1 * * *",
         "kind": "cron",
@@ -270,11 +270,11 @@
         "channel": "last"
       },
       "state": {
-        "nextRunAtMs": 1776016880664,
-        "lastRunAtMs": 1776013280672,
+        "nextRunAtMs": 1776024080664,
+        "lastRunAtMs": 1776020480673,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 21299,
+        "lastDurationMs": 9005,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -567,7 +567,7 @@
       "name": "water-reminder",
       "enabled": true,
       "createdAtMs": 1775727456880,
-      "updatedAtMs": 1776016263409,
+      "updatedAtMs": 1776016828278,
       "schedule": {
         "expr": "0 */2 8-22 * *",
         "kind": "cron",
@@ -585,11 +585,11 @@
         "to": "-1003606834639"
       },
       "state": {
-        "nextRunAtMs": 1776016811694,
-        "lastRunAtMs": 1776012072027,
+        "nextRunAtMs": 1776024011694,
+        "lastRunAtMs": 1776016811702,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 17477,
+        "lastDurationMs": 16576,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -600,18 +600,17 @@
       "name": "hourly-memory-summary",
       "enabled": true,
       "createdAtMs": 1775986428815,
-      "updatedAtMs": 1776015099195,
+      "updatedAtMs": 1776020842692,
       "schedule": {
+        "expr": "45 * * * *",
         "kind": "cron",
-        "expr": "0 * * * *",
-        "tz": "Asia/Kolkata",
         "staggerMs": 300000
       },
       "sessionTarget": "isolated",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "Hourly memory summary job:\n1. Get all chat messages from last 60 minutes: both this DM and the main group\n2. Extract: Hard facts, decisions, requests, bugs, changes, agreements, Mood, tone, emotional state, vibe, frustrations, satisfaction, Unspoken context, things implied between lines, Preferences, likes, dislikes that were shown not stated, Trust signals, jokes that landed, things that annoyed\n3. Do NOT discard banter and casual talk - this is where most of the context lives.\n4. Summarize cleanly, separate Facts section and Context / Tone section\n5. Append this summary cleanly to today's daily memory file\n6. No notifications required. Run silently."
+        "message": "[OBJECTIVE]\nExecute an hourly memory extraction job to synthesize facts and relational context from recent communications.\n\n[DATA ACQUISITION]\n1. Retrieve the exact current timestamp.\n2. Query sessions_history (limit=100) for the following session keys:\n - Nrexya main group\n - This updates group\n - Nemesis private DM\n3. Filter: Strictly discard any message older than exactly 60 minutes from the current timestamp.\n4. Process: Read every single remaining message in the 60-minute window. Zero skipping is permitted.\n\n[EXTRACTION PROTOCOL]\nAnalyze all retained messages. You must explicitly include banter and casual talk, as this contains high-density context. Extract and categorize:\n- Hard Data: Decisions, requests, bugs, changes, and agreements.\n- Context & Vibe: Mood, tone, frustrations, satisfaction, unspoken implications, implicit preferences, successful humor, and friction points.\n\n[OUTPUT & STORAGE]\n1. Append the summary directly to the end of today's daily memory file.\n2. You must format the appended text exactly according to this Markdown template. Do not deviate, and do not add conversational introductory text:\n\n---\n## 🕒 [HH:MM AM/PM] Snapshot\n\nFacts\n* [Bullet points of hard facts, decisions, bugs, etc.]\n\nContext & Tone\n* [Bullet points of mood, unspoken context, jokes, etc.]\n---\n\n3. Validation constraint: If messages exist within the window, you MUST extract and write the data. Only write the timestamp header and \"No messages\" if the 60-minute dataset is absolutely empty.\n\n[EXECUTION & ERROR HANDLING]\n- Success: Run 100% silently. Do NOT trigger notifications, send confirmation messages, or output conversational filler anywhere. Output only to the memory file.\n- Failure Override: If the job fails, encounters an execution error, or cannot read/write to the required files, you must immediately send a failure notification detailing the error to the updates group."
       },
       "delivery": {
         "mode": "announce",
@@ -619,15 +618,44 @@
         "to": "-1003951451198"
       },
       "state": {
-        "nextRunAtMs": 1776018661107,
-        "lastRunAtMs": 1776015061114,
+        "nextRunAtMs": 1776023161107,
+        "lastRunAtMs": 1776018661114,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 38081,
+        "lastDurationMs": 52869,
         "lastDelivered": true,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 1,
-        "lastError": "⚠️ 📝 Edit: `in ~/.openclaw/workspace/memory/2026-04-12.md` failed"
+        "consecutiveErrors": 2,
+        "lastError": "⚠️ 📝 Edit: `in memory/2026-04-12.md` failed"
+      }
+    },
+    {
+      "id": "826f91f9-5a0a-42f7-89ae-535bdf457a60",
+      "agentId": "main",
+      "sessionKey": "agent:main:telegram:group:-1003951451198",
+      "name": "memory-job-check-0045",
+      "enabled": true,
+      "deleteAfterRun": true,
+      "createdAtMs": 1776021026920,
+      "updatedAtMs": 1776021026920,
+      "schedule": {
+        "kind": "at",
+        "at": "2026-04-12T19:17:00.000Z"
+      },
+      "sessionTarget": "session:agent:main:telegram:group:-1003951451198",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Check the hourly memory summary job run result, verify the memory file, and report status back to this updates group."
+      },
+      "delivery": {
+        "mode": "announce",
+        "to": "-1003951451198",
+        "channel": "telegram"
+      },
+      "state": {
+        "nextRunAtMs": 1776021420000,
+        "runningAtMs": 1776021420002
       }
     }
   ]
