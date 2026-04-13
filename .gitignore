@@ -21,3 +21,19 @@ logs/
 *.bak
 openclaw.json.*
 agents/main/sessions/d847c34e-75bc-4b70-ab12-8aaa4a73fbb6.jsonl
+-e 
+# Browser cache and state
+browser/
+# Root config files
+*.bak
+openclaw.json
+openclaw.json.*
+# State folders
+cron/
+devices/
+identity/
+tasks/
+logs/
+agents/
+telegram/
+
